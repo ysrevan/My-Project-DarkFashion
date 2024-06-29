@@ -1,0 +1,41 @@
+.animation {
+    background-image: url('https://darkfashion.wpengine.com/wp-content/uploads/2023/09/home-3-footer-bg.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 130px;
+    overflow: hidden; 
+}
+
+.animation ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    gap: 40px;
+    animation: brand 10s linear infinite;
+    li{
+        color: #fff;
+        font-size: 50px;
+        transition: .5s;
+    }
+    li:hover{
+        color: #A1876A;
+    }
+    img{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@keyframes brand {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+

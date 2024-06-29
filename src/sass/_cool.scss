@@ -1,0 +1,175 @@
+.cool{
+    background-image: url('https://darkfashion.wpengine.com/wp-content/uploads/2023/09/blog-bg.jpg');
+    width: 100%;
+    height: 700px;
+    .box{
+        position: relative;
+        z-index: 3;
+        background-color: rgba(0,0,0,0.5);
+        width: 100%;
+        height: 700px;
+        display: flex;
+        .photo{
+            img{
+                height: 700px;
+            }    
+        }
+        .container{
+            .cool-text{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 300px;
+                width: 95%;
+                overflow-x: hidden;
+                .text-1{
+                    overflow-x: hidden;
+                    h5{
+                        color: #fff;
+                    }
+                    h1{
+                        color: #fff;
+                    }
+                }
+                .text-2{
+                    overflow-x: hidden;
+                    p{
+                        color: #fff;
+                    }
+                    button{
+                        padding: 10px 30px 10px 30px;
+                        background-color: #A1876A;
+                        border: 1px solid #A1876A;
+                        color: #fff;
+                        transition: .6s;
+                    }
+                    button:hover{
+                        background: none;
+                        color: #A1876A;
+                    }
+                }
+            }
+       .picture{
+          display: flex;
+        .row{
+            width: 50%;
+            .card{
+                width: 210px;
+                text-align: center;
+                background: none;
+                border: none;
+                h1{
+                    font-size: 60px;
+                    color: #A1876A;
+                    transition: .5s;
+                }
+                h1:hover{
+                    color: #fff;
+                }
+                h4{
+                    color: #fff !important;
+                    transition: .5s;
+                }
+                h4:hover{
+                    color: #A1876A !important;
+                }
+            }
+        }
+        .two-picture{
+            .picture-1{
+                overflow-x: hidden;
+                img{
+                    width: 50%;
+                } 
+            }
+            .picture-2{
+                overflow-x: hidden;
+               img{
+                width: 100%;
+                height: 300px;
+               }
+            }
+        }
+       }
+        }
+    }
+}
+
+
+.picture{
+    .card{
+        .grey-3:hover{
+        background: none !important;
+    }
+    .grey-4:hover{
+        background: none !important;
+    }
+    .grey-1{
+        background-color: rgba(0,0,0,0.2);
+    }
+    .grey-1:hover{
+        background-color: rgba(0,0,0,0.2);
+    }
+    .grey-2{
+        background-color: rgba(0,0,0,0.2);
+    }
+    .grey-2:hover{
+        background-color: rgba(0,0,0,0.2);
+    }
+    }
+}
+
+
+@media (max-width: 576px) {
+    .cool{
+        height: 1800px;
+    }
+    .box {
+        flex-direction: column; 
+    }
+    .photo{
+        img{
+            width: 100%;
+        }
+    }
+    .picture {
+        flex-direction: column;
+        
+    }
+    
+    .row {
+        width: 100%; 
+        .card {
+            width: 100%; 
+        }
+    }
+    .picture{
+        .row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 10px; 
+            transform: translateX(-35px);
+        }
+    
+        .col-12 {
+            flex: unset;
+        }
+    
+        .col-12:nth-child(3),
+        .col-12:nth-child(4) {
+            order: 1; 
+        }
+    
+        .col-12:nth-child(1),
+        .col-12:nth-child(2) {
+            order: 2; 
+        }
+    }
+    .container {
+        order: 1; 
+    }
+    .two-picture{
+        margin-top: 50px;
+    }
+}
+

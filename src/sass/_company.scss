@@ -1,0 +1,174 @@
+.company {
+    background-image: url('https://darkfashion.wpengine.com/wp-content/uploads/2023/09/inner-section-bg-scaled.jpg');
+    width: 100%;
+    height: 800px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.head {
+    text-align: center;
+    transform: translateY(150px);
+     overflow: hidden;
+    h5 {
+        color: #fff;
+    }
+
+    h1 {
+        color: #fff;
+        font-size: 50px;
+    }
+}
+
+.cards {
+    transform: translateY(230px);
+
+    .card {
+        background: none;
+        border: none;
+
+        .card img {
+            width: 100%;
+            height: auto;
+            opacity: 0;
+        }
+
+        .card-title {
+            color: #fff;
+            transition: .5s;
+        }
+
+        .card-title:hover {
+            color: #A1876A
+        }
+
+        .card-text {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .card-body {
+            button {
+                transform: translateX(180px);
+                background: none;
+                border: none;
+                font-size: 30px;
+                color: #fff;
+                transition: .5s;
+            }
+
+            button:hover {
+                color: #A1876A;
+            }
+        }
+    }
+}
+
+.scissors{
+  font-size: 50px;
+  color: #fff;
+}
+.machine{
+  font-size: 50px ;
+  color: #fff ;
+}
+.yarn{
+  font-size: 50px ;
+  color: #fff ;
+}
+.rope{
+  font-size: 50px ;
+  color: #fff ;
+}
+
+
+
+
+
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: background 2s;
+  }
+  
+  .photo-1:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+  }
+
+  .photo-2:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+  }
+
+  .photo-3:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+  }
+
+  .photo-4:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+  }
+  
+  .photo-1:hover {
+    background-image: url('https://darkfashion.wpengine.com/wp-content/uploads/2023/10/home-1-icon-box-image-1.jpg'); /* Buraya görüntü yolunuzu koyun */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .photo-2:hover {
+    background-image: url('https://darkfashion.wpengine.com/wp-content/uploads/2023/10/home-1-icon-box-image-2.webp');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .photo-3:hover {
+    background-image: url('https://darkfashion.wpengine.com/wp-content/uploads/2023/10/home-1-icon-box-image-3.webp');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .photo-4:hover {
+    background-image: url('https://darkfashion.wpengine.com/wp-content/uploads/2023/10/home-1-icon-box-image-4.webp');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card-body {
+    position: relative;
+    z-index: 2;
+  }
+  
+  
+
+  @media (max-width:576px) {
+    .company {
+      height: 1500px;
+  }
+  }

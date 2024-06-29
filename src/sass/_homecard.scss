@@ -1,0 +1,27 @@
+.homecard{
+    background-image: url('https://darkfashion.wpengine.com/wp-content/uploads/2023/09/inner-section-bg-scaled.jpg');
+  
+    .card{
+        background: none;
+        border: none;
+      
+        .card-title{
+            color: #fff;
+        }
+        .card-text{
+            color: #fff;
+            font-size: 20px;
+        }
+    }
+ 
+    .homecard-text{
+        text-align: center;
+        transform: translateY(30px);
+      h5{
+        color: #fff;
+      }
+      h1{
+        color: #fff;
+      }
+    }
+}

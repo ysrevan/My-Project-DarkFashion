@@ -1,0 +1,51 @@
+.shopcard{
+    background-color: #000;
+    .card{
+        background: none;
+        border: none;
+        transition: .2s;
+        .card-title{
+            color: #fff;
+        }
+        .card-text{
+            color: #fff;
+            font-size: 20px;
+        }
+        .cart-button{
+            padding: 10px 15px 10px 15px;
+            background-color: #A1876A;
+             border: 1px solid #A1876A;
+             color: #fff;
+             border-radius: 20px;
+             font-size: 15px;
+             transition: .5s;
+             text-decoration: none;
+        }
+        .cart-button:hover{
+            background: none;
+            color: #fff;
+        }
+       .wishlist-button{
+        width: 30%;
+       transform: translateX(80px);
+       padding: 5px 10px 5px 10px;
+       background-color: #A1876A;
+        border: 1px solid #A1876A;
+        color: #fff;
+        border-radius: 20px;
+        transition: .5s;
+        .heart{
+            font-size: 20px;
+            color: #fff;
+        }
+       }
+       .wishlist-button:hover{
+        background: none;
+        color: #fff;
+       }
+    }
+    .card:hover{
+        border: 2px solid #A1876A;
+    }
+    
+}

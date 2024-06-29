@@ -1,0 +1,34 @@
+.brand-card{
+    background-color: #000;
+    border-radius: 0%;
+    height: 200px;
+   position: relative;
+   .brand-photo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.3s;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+   }
+    .card-body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .card-title{
+            color: #fff;
+        }
+    }
+}
+
+.brand-card:hover .brand-photo{
+    opacity: 1;
+}
+
+

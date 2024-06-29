@@ -1,0 +1,76 @@
+.custom{
+    width: 100%;
+    height: 800px;
+    background-image: url('https://darkfashion.wpengine.com/wp-content/uploads/2023/09/inner-section-bg-scaled.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+        img{
+            width: 50%; 
+        }
+.container{
+    .custom-card{
+       .card{
+        background: none;
+        border: none;
+        .card-img-top{
+            width: 100%;
+        }
+        .card-body{
+            text-align: center;
+            .card-title{
+                color: #fff;
+            }
+            .card-text{
+                color: rgb(129, 126, 126);
+            }
+            .btn-primary{
+               background-color: #A1876A !important;
+               border: 1px solid #A1876A !important;
+               transition: 0.5s !important;
+               border-radius: 5px !important;
+            }
+            .btn-primary:hover{
+                background: none !important;
+             }
+        }
+       }
+    }
+}
+.custom-text{
+    transform: translateY(50px);
+    h1{
+        color: #fff;
+    }
+    h6{
+        color: #fff;
+    }
+    p{
+        color: #fff;
+    }
+}
+}
+
+
+.photo-opacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; 
+    transition: opacity 0.3s ; 
+}
+
+.card:hover .photo-opacity {
+    opacity: 1; 
+}
+
+.card-img-top, .photo-opacity img {
+   width: 100%;
+    object-fit: cover; 
+}  
+
+
+  
