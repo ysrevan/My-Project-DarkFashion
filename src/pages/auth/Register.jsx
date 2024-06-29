@@ -15,42 +15,53 @@ const Register = () => {
   const registerSubmited = (e)=>{
     e.preventDefault();
 
-
+if (
+  !fullname.current?.value ||
+  !birthday.current?.value ||
+  !telephone.current?.value||
+  !email.current?.value ||
+  !password.current?.value
+ 
+) {
+  swal("Please fill inputs","","warning");
+} else {
+     
+    const sendDataToDb = async()=>{
+      if (password.current.value !== confirepassword.current.value) {
+        swal("Password is not equal!","","error")
+      }else{
+  
+        const createUser = async()=>{
+          const {error} = await supabase.from('users').insert({
+            fullname:fullname.current?.value,
+            birthday:birthday.current?.value,
+            telephone:telephone.current?.value,
+            email:email.current?.value,
+            password:password.current?.value,
+            // token: crypto.randomUUID()
+           })
+           if (error) {
+             swal('Something, went wrong!',"","error")
+             console.log(error);
+           }else{
+             swal('New account has been created',"","success");
+             setTimeout(()=>{
+              window.location.assign('/login')
+             },2000)
+           }
+        }
+  
+       const {data} = await supabase.from('users').select();
+      data.length === 0 ? createUser() :   data?.map((item)=>(
+        item.email === email.current?.value ?
+         swal('This email is already registered!',"","error"):createUser()
+       ))
+      }
+      }
+      sendDataToDb()
+}
  
 
-    const sendDataToDb = async()=>{
-    if (password.current.value !== confirepassword.current.value) {
-      swal("Password is not equal!","","error")
-    }else{
-
-      const createUser = async()=>{
-        const {error} = await supabase.from('users').insert({
-          fullname:fullname.current?.value,
-          birthday:birthday.current?.value,
-          telephone:telephone.current?.value,
-          email:email.current?.value,
-          password:password.current?.value,
-          token: crypto.randomUUID()
-         })
-         if (error) {
-           swal('Something, went wrong!',"","error")
-           console.log(error);
-         }else{
-           swal('New account has been created',"","success");
-           setTimeout(()=>{
-            window.location.assign('/login')
-           },2000)
-         }
-      }
-
-     const {data} = await supabase.from('users').select();
-    data.length === 0 ? createUser() :   data?.map((item)=>(
-      item.email === email.current?.value ?
-       swal('This email is already registered!',"","error"):createUser()
-     ))
-    }
-    }
-    sendDataToDb()
 
    
   
