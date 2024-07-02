@@ -38,7 +38,7 @@ if (
             telephone:telephone.current?.value,
             email:email.current?.value,
             password:password.current?.value,
-            // token: crypto.randomUUID()
+            token: crypto.randomUUID()
            })
            if (error) {
              swal('Something, went wrong!',"","error")
@@ -52,13 +52,11 @@ if (
         }
   
        const {data} = await supabase.from('users').select();
-      data.length === 0 ? createUser() :   data?.map((item)=>(
-        item.email === email.current?.value ?
-         swal('This email is already registered!',"","error"):createUser()
-       ))
+      data.length === 0 ? createUser() : data?.find(p=>p.email === email.current?.value) ?  swal('This email is already registered!',"","error"):createUser()
       }
       }
       sendDataToDb()
+
 }
  
 

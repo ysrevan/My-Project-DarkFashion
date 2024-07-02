@@ -1,6 +1,7 @@
 header{
     height: 90px;
     background-color: #000;
+    position: relative;
     .container{
         height: 80px;
         @include flex();
