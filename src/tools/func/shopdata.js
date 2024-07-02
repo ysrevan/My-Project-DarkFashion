@@ -30,3 +30,12 @@ export const homedata = async()=>{
         store.dispatch(homedataread(data))
     }
 }
+
+export const userdata = async()=>{
+    const {data,error} = await supabase.from('users').select()
+    if(error){
+        console.log(error)
+    }else{
+        store.dispatch(userread(data))
+    }
+}

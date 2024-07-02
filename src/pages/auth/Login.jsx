@@ -20,6 +20,10 @@ const Login = () => {
 
       if (adminuser.email === email.current?.value && adminuser.password === password.current?.value) {
         setCookie("admintoken",adminuser.tokenadmin)
+        swal('Login is successfull!','','success')
+        setTimeout(()=>{
+          window.location.assign('/')
+         },2000)
       }else{
      
       const checkLogin = async () => {
@@ -34,7 +38,7 @@ const Login = () => {
   const { data } = await supabase.from('users').select();
   data?.map((item) => (
     item.email === email.current?.value && item.password === password.current?.value ? 
-    createCookie(item.token) : swal('Email or password is wrong',"",'error')
+  (  createCookie(item.token), localStorage.setItem('username',item.fullname)) : swal('Email or password is wrong',"",'error')
   ));
 }
 checkLogin();

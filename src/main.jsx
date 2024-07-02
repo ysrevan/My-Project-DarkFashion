@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import 'aos/dist/aos.css';
 import { Provider } from 'react-redux'
 import store from './tools/store'
-import { categorydata, fashiondata, homedata } from './tools/func/shopdata'
+import { categorydata, fashiondata, homedata, userdata } from './tools/func/shopdata'
 
 
 fashiondata();
@@ -19,6 +19,8 @@ categorydata()
 
 
 homedata()
+
+userdata()
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

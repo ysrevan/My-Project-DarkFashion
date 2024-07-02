@@ -37,7 +37,15 @@ console.log(cookie);
         <div className="icons">
         <IoSearch className="icon"/>
        
-        {cookie['admintoken']?<MdLogin className='icon'  onClick={()=>{removeCookie('admintoken')}}/>:<NavLink to="/register"> <FaRegUser className='icon'/></NavLink>}
+        {cookie['admintoken']?<MdLogin className='icon'  onClick={()=>{removeCookie('admintoken');
+        window.location.assign('/')}}
+        />
+        : cookie['cookie-fashion']?
+       <>
+         <MdLogin className='icon'  onClick={()=>{removeCookie('cookie-fashion');
+         window.location.assign('/');}}/> 
+        <Link className='name' to={`/account/${cookie['cookie-fashion']}`}>{localStorage.getItem('username')}</Link>
+       </> :<NavLink to="/register"> <FaRegUser className='icon'/></NavLink>}
         <NavLink to="/cart">  <FiShoppingCart className='icon' /></NavLink>
         <NavLink to="wishlist"> <FaRegHeart className='icon'/></NavLink>
         </div>
@@ -46,4 +54,5 @@ console.log(cookie);
   )
 }
 
+{/* <NavLink to="/register"> <FaRegUser className='icon'/></NavLink> */}
 export default Header

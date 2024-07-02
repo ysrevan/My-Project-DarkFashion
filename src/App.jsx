@@ -21,6 +21,7 @@ import ReadProduct from './pages/dashboard/products/Read';
 import UpdateProduct from './pages/dashboard/products/Update';
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
+import Account from './pages/auth/Account';
 
 const App = () => {
   return (
@@ -46,6 +47,8 @@ const App = () => {
           <Route path='/dashboard/products/read' element={<ReadProduct />} />
           <Route path='/dashboard/products/create' element={<CreateProduct />} />
           <Route path='/dashboard/products/update/:id' element={<UpdateProduct />} />
+
+          <Route path='/account/:token' element={<Account/>} />
 
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
