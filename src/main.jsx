@@ -10,6 +10,7 @@ import 'aos/dist/aos.css';
 import { Provider } from 'react-redux'
 import store from './tools/store'
 import { categorydata, fashiondata, homedata, userdata } from './tools/func/shopdata'
+import { CartProvider } from 'react-use-cart'
 
 
 fashiondata();
@@ -26,7 +27,9 @@ userdata()
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-    <App />
+      <CartProvider>
+      <App />
+      </CartProvider>
     </Provider>
   </React.StrictMode>,
 )

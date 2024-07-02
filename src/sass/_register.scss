@@ -1,0 +1,69 @@
+// .form-background{
+//     background-color: #000;
+//    .container{
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     form{
+//         background-color: #fff;
+        
+//     }
+//     .form-label{
+//         color: #000;
+//     }
+//     .form-control{
+//         border: 1px solid #000;
+//         width: 90%;
+//     }
+//     .button-register{
+//         padding: 10px 245px 10px 245px;
+//         border-radius: 0%;
+//     }
+//    }
+// }
+
+
+.form-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the form is vertically centered */
+    background-color: #000; /* Example background color */
+  }
+  
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .center-form {
+    width: 100%;
+    max-width: 600px; /* Adjust the max-width as needed */
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-text{
+    text-align: center;
+    color: #A1876A;
+  }
+
+.button-register{
+    padding: 10px 245px 10px 245px;
+    border-radius: 0%;
+}
+
+.login-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .login-button{
+        border: none;
+        color: #A1876A;
+        background: none;
+    }
+}

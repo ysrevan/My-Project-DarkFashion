@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deletefashion } from '../../../tools/slices/fashionSlice';
 import { useAppSelector } from '../../../tools/store';
-
+import Animation from '../../../components/Animation'
+import ProductsReadName from '../../../components/ProductsReadName';
 const Read = () => {
   const dispatch = useDispatch(); 
   const fashion = useAppSelector((state) => state.fashion); 
@@ -13,9 +14,12 @@ const Read = () => {
   };
 
   return (
-    <div className='container'>
-      <h1 className="my-5" style={{ textAlign: "center" }}>Products List</h1>
-      <Link to="/dashboard/products/Create">Create Products</Link>
+<>
+<ProductsReadName/>
+<div className="productsread-box">
+     <div className='container'>
+      
+      <Link to="/dashboard/products/Create"><button className='productscategory mt-3 mb-3'>Create Products</button></Link>
       <table className="table">
         <thead>
           <tr>
@@ -49,6 +53,9 @@ const Read = () => {
         </tbody>
       </table>
     </div>
+   </div>
+   <Animation/>
+</>
   );
 };
 

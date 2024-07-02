@@ -1,6 +1,8 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import swal from 'sweetalert';
+import RegisterName from '../../components/RegisterName';
+import Animation from '../../components/Animation';
 import supabase from "../../config/connect";
 
 const Register = () => {
@@ -67,10 +69,12 @@ if (
   return (
 
   <>
-    <div className="container d-flex align-items-center justify-content-center">
+  <RegisterName/>
+<div className="form-background">
+<div className="container center-container">
 
-<form className='col-6' onSubmit={registerSubmited}>
-
+<form  className="center-form mt-5 mb-5" onSubmit={registerSubmited}>
+<h1 className='register-text'>Register Form</h1>
 <div className="mb-3">
     <label  className="form-label">Fullname</label>
     <input ref={fullname} type="text" className="form-control"  />
@@ -99,20 +103,28 @@ if (
 
 
   <div className="mb-3">
-    <label  className="form-label">Confire Password</label>
+    <label  className="form-label">Confirm Password</label>
     <input ref={confirepassword} type="password" className="form-control" />
   </div>
   
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-primary button-register">REGISTER</button>
+
+  <div className="login-div">
+    <p className='mt-3'>Already have an account.?</p>
+  <Link to='/login' ><button className='login-button'>Login</button></Link>
+  </div>
 </form>
 
 
 
     </div>
 
+   
+</div>
 
-    <Link to='/login' ><button>Login</button></Link>
-    
+
+   
+    <Animation/>
   </>
   )
 }

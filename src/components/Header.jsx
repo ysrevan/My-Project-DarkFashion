@@ -46,7 +46,14 @@ console.log(cookie);
          window.location.assign('/');}}/> 
         <Link className='name' to={`/account/${cookie['cookie-fashion']}`}>{localStorage.getItem('username')}</Link>
        </> :<NavLink to="/register"> <FaRegUser className='icon'/></NavLink>}
-        <NavLink to="/cart">  <FiShoppingCart className='icon' /></NavLink>
+
+
+        <NavLink to="/cart" className="position-relative">  
+        <FiShoppingCart className='icon' />
+   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+  0
+</span>
+</NavLink>
         <NavLink to="wishlist"> <FaRegHeart className='icon'/></NavLink>
         </div>
       </div>
@@ -54,5 +61,5 @@ console.log(cookie);
   )
 }
 
-{/* <NavLink to="/register"> <FaRegUser className='icon'/></NavLink> */}
+
 export default Header

@@ -18,7 +18,7 @@ const Read = () => {
     <CategoryReadName/>
     <div className="categoryread-box">
     <div className='container'>
-<Link to="/dashboard/category/Create">Create Category</Link>
+<Link  to="/dashboard/category/Create"><button className='createcategory mt-3 mb-3'>Create Category</button></Link>
 <table className="table">
   <thead>
     <tr>

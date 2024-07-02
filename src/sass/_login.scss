@@ -1,0 +1,46 @@
+.center-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.center-login-form{
+    width: 100%;
+    max-width: 600px; 
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.login-text{
+    text-align: center;
+}
+.password-text{
+    color: #A1876A;
+    text-align: center;
+}
+.facebook-google-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .facebook-button{
+        padding: 10px 40px 10px 40px;
+        background-color: #1574EA;
+        border: 1px solid #1574EA;
+        color: #fff;
+        .facebook-icon{
+            margin-bottom: 5px;
+            color: #fff;
+        }
+    }
+    .google-button{
+        padding: 10px 40px 10px 40px;
+        background-color: #E94235;
+        border: 1px solid #E94235;
+        color: #fff;
+        .facebook-icon{
+            margin-bottom: 5px;
+            color: #fff;
+        }
+    }
+}
