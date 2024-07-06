@@ -22,6 +22,7 @@ import UpdateProduct from './pages/dashboard/products/Update';
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import Account from './pages/auth/Account';
+import ShopDetails from './pages/ShopDetails';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           <Route path='/faq' element={<FAQ />} />
           <Route path='/login' element={<Login />} />
           <Route path='/shop' element={<Shop />} />
+          <Route path='/shop/:slug' element={<ShopDetails />} />
           <Route path='/news' element={<News />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
@@ -49,6 +51,7 @@ const App = () => {
           <Route path='/dashboard/products/update/:id' element={<UpdateProduct />} />
 
           <Route path='/account/:token' element={<Account/>} />
+          
 
           <Route path='*' element={<NotFoundPage />} />
         </Routes>

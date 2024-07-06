@@ -1,6 +1,8 @@
 import React from 'react';
 import { useCookies } from 'react-cookie';
 import { FaHeart } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import slugify from 'slugify';
 import supabase from '../config/connect';
 
 const ShopCard = ({img, title, category, price, alldata }) => {
@@ -15,7 +17,7 @@ const [cookie] = useCookies();
           <p className="card-text">{category}</p>
           <p className="card-text">${price}</p>
           <button className='wishlist-button mb-3'><FaHeart className='heart' /></button>
-          <button href="#" className="cart-button mb-3" >READ MORE</button>
+          <Link to={`/shop/${slugify(alldata.title)}`} className="cart-button mb-3" >READ MORE</Link>
           <button href="#" className="cart-button" onClick={()=>{
             const dataSendToBasket = async()=>{
               const {data,error} = await supabase.from('basket').select();
