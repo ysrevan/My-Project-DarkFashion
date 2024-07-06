@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ShopCard from '../components/ShopCard';
 import ShopName from '../components/ShopName';
 import Animation from '../components/Animation'
 import { useAppSelector } from '../tools/store';
 import { useCookies } from 'react-cookie';
+import AOS from 'aos';
 
 const Shop = () => {
   const [filterdata,setFilterData] = useState([])
@@ -19,6 +20,13 @@ const filterProduct = (category)=>{
 const [cookie] = useCookies()
 console.log(cookie);
 
+
+
+useEffect(() => {
+  AOS.init({
+    duration: 1000, 
+  });
+}, []);
   return (
    <>
  <ShopName/>
@@ -28,7 +36,7 @@ console.log(cookie);
 
 
 
-
+  <div data-aos="fade-down">
       <div className="row">
         <div className="filter-button mt-5">
 
@@ -43,17 +51,18 @@ console.log(cookie);
         {
   filterdata.length === 0 ? (
     fashion.map((item) => (
-      <ShopCard img={item.photo} title={item.title} price={item.price} category={item.category} key={item.id} />
+      <ShopCard alldata={item} img={item.photo} title={item.title} price={item.price} category={item.category} key={item.id} />
     ))
   ) : (
     filterdata.map((item) => (
-      <ShopCard img={item.photo} title={item.title} price={item.price} category={item.category} key={item.id} />
+      <ShopCard alldata={item}  img={item.photo} title={item.title} price={item.price} category={item.category} key={item.id} />
     ))
   )
 }
 
       
       </div>
+    </div>
      
     </div>
 

@@ -71,7 +71,7 @@ console.log(cookie);
        </> :<NavLink to="/register"> <FaRegUser className='icon'/></NavLink>}
 
 
-        <NavLink to="/cart" className="position-relative">  
+        <NavLink to={`${!cookie['cookie-fashion']?"/login":"/cart"}`} className="position-relative">  
         <FiShoppingCart className='icon' />
    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
   0
