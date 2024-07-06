@@ -7,6 +7,7 @@ import { FaRegUser } from "react-icons/fa";
 import { Button, NavDropdown } from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
 import { MdLogin } from "react-icons/md";
+import { MdOutlineSpaceDashboard } from "react-icons/md";
 const Header = () => {
 
 
@@ -33,17 +34,39 @@ console.log(cookie);
 
  
 
-
         <div className="icons">
+
+
+
+          
+        {cookie["admintoken"] === "bruh84587v" ?
+  <li className="nav-item dropdown btn btn-warning dashboard-dropdown">
+  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <MdOutlineSpaceDashboard />
+  </a>
+  <ul className="dropdown-menu">
+    <li><Link className='export-read' to="/dashboard/category/read">Category</Link></li>
+    <li><Link className='export-read' to="/dashboard/products/read">Products</Link></li>
+  </ul>
+</li> : ""}
+
+
         <IoSearch className="icon"/>
        
         {cookie['admintoken']?<MdLogin className='icon'  onClick={()=>{removeCookie('admintoken');
-        window.location.assign('/')}}
+        swal('Logout is successfull!','','success')
+        setTimeout(()=>{
+          window.location.assign('/login')
+         },2000)
+        }}
         />
         : cookie['cookie-fashion']?
        <>
          <MdLogin className='icon'  onClick={()=>{removeCookie('cookie-fashion');
-         window.location.assign('/');}}/> 
+          swal('Logout is successfull!','','success')
+          setTimeout(()=>{
+            window.location.assign('/login')
+           },2000)}}/> 
         <Link className='name' to={`/account/${cookie['cookie-fashion']}`}>{localStorage.getItem('username')}</Link>
        </> :<NavLink to="/register"> <FaRegUser className='icon'/></NavLink>}
 
@@ -56,6 +79,10 @@ console.log(cookie);
 </NavLink>
         <NavLink to="wishlist"> <FaRegHeart className='icon'/></NavLink>
         </div>
+
+
+
+
       </div>
     </header>
   )

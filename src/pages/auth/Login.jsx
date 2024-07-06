@@ -5,8 +5,8 @@ import supabase from "../../config/connect";
 import { FaFacebookF } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 const adminuser = {
-  email:'super@fashion.com',
-  password:'fashion123',
+  email:'dark@fashion.com',
+  password:'darkfashion123',
   tokenadmin:"bruh84587v"
 }
 

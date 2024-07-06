@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ShopCard from '../components/ShopCard';
 import ShopName from '../components/ShopName';
 import Animation from '../components/Animation'
-import { Link } from 'react-router-dom';
 import { useAppSelector } from '../tools/store';
 import { useCookies } from 'react-cookie';
 
@@ -27,16 +26,7 @@ console.log(cookie);
 
   <div className='container'>
 
-{cookie["admintoken"] === "bruh84587v" ?
-  <li className="nav-item dropdown btn btn-warning dashboard-dropdown">
-  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Dashboard
-  </a>
-  <ul className="dropdown-menu">
-    <li><Link className='export-read' to="/dashboard/category/read">Category</Link></li>
-    <li><Link className='export-read' to="/dashboard/products/read">Products</Link></li>
-  </ul>
-</li> : ""}
+
 
 
       <div className="row">

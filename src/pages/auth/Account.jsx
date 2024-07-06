@@ -11,7 +11,7 @@ const Account = () => {
 
   return (
     <div>
-    {!filterUser? <p>Loading...</p>:<ul>
+    {!filterUser? <p>Now Account</p>:<ul>
     <li>{filterUser.fullname}</li>
     <li>{filterUser.telephone}</li>
     <li>{filterUser.birthday}</li>
