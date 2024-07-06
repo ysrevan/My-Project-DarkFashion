@@ -2,6 +2,9 @@ import supabase from "../../config/connect"
 import { categoryread } from "../slices/categorySlice"
 import { fashionread } from "../slices/fashionSlice"
 import { homedataread } from "../slices/homeSlice"
+import { news1read } from "../slices/news1Slice"
+import { news2read } from "../slices/news2Slice"
+import { userread } from "../slices/userSlice"
 import store from "../store"
 
 export const fashiondata = async()=>{
@@ -37,5 +40,23 @@ export const userdata = async()=>{
         console.log(error)
     }else{
         store.dispatch(userread(data))
+    }
+}
+
+export const news1data = async()=>{
+    const {data,error} = await supabase.from('news1').select()
+    if(error){
+        console.log(error)
+    }else{
+        store.dispatch(news1read(data))
+    }
+}
+
+export const news2data = async()=>{
+    const {data,error} = await supabase.from('news2').select()
+    if(error){
+        console.log(error)
+    }else{
+        store.dispatch(news2read(data))
     }
 }

@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import categorySlice from '../slices/categorySlice';
 import fashionSlice from '../slices/fashionSlice';
 import homeSlice from '../slices/homeSlice';
+import news1Slice from '../slices/news1Slice';
+import news2Slice from '../slices/news2Slice';
 import userSlice from '../slices/userSlice';
 
 const store = configureStore({
@@ -10,7 +12,9 @@ const store = configureStore({
     fashion: fashionSlice,
     category: categorySlice,
     home: homeSlice,
-    user: userSlice
+    user: userSlice,
+    news1: news1Slice,
+    news2: news2Slice,
   },
 });
 
