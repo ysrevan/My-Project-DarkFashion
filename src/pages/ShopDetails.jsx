@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useAppSelector } from '../tools/store';
 import slugify from 'slugify';
 
@@ -22,8 +22,9 @@ const shopDetails = fashion.find(p=>slugify(p.title)===slug)
   <h1 className="display-5 fw-bold text-body-emphasis lh-1 mb-3 details-title">{shopDetails.title}</h1>
   <p className="lead ">{shopDetails.category}</p>
   <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-    <button type="button" className="btn btn-dark btn-lg px-4 me-md-2">${shopDetails.price}</button>
-   
+    <h3  className="details-price">${shopDetails.price}</h3>
+    <Link to="/shop" type="button" className="btn btn-dark btn-lg px-4 me-md-2">Back</Link>
+
   </div>
 </div>
 </div>
