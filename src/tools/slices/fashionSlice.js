@@ -8,6 +8,8 @@ const fashionSlice = createSlice({
     fashionread: (state, action) => {
        return action.payload
     },
+
+    
     addfashion: async (state, action) => {
       const createfashion = async () => {
         const { data, error } = await supabase

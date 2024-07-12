@@ -19,6 +19,12 @@ import UpdateCategory from './pages/dashboard/category/Update';
 import CreateProduct from './pages/dashboard/products/Create';
 import ReadProduct from './pages/dashboard/products/Read';
 import UpdateProduct from './pages/dashboard/products/Update';
+
+import CreateNews from './pages/dashboard/news1/Create';
+import ReadNews from './pages/dashboard/news1/Read';
+import UpdateNews from './pages/dashboard/news1/Update';
+
+
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import Account from './pages/auth/Account';
@@ -49,6 +55,10 @@ const App = () => {
           <Route path='/dashboard/products/read' element={<ReadProduct />} />
           <Route path='/dashboard/products/create' element={<CreateProduct />} />
           <Route path='/dashboard/products/update/:id' element={<UpdateProduct />} />
+
+          <Route path='/dashboard/news1/read' element={<ReadNews />} />
+          <Route path='/dashboard/news1/create' element={<CreateNews />} />
+          <Route path='/dashboard/news1/update/:id' element={<UpdateNews />} />
 
           <Route path='/account/:token' element={<Account/>} />
           

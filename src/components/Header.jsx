@@ -47,6 +47,7 @@ console.log(cookie);
   <ul className="dropdown-menu">
     <li><Link className='export-read' to="/dashboard/category/read">Category</Link></li>
     <li><Link className='export-read' to="/dashboard/products/read">Products</Link></li>
+    <li><Link className='export-read' to="/dashboard/news1/read">News</Link></li>
   </ul>
 </li> : ""}
 
