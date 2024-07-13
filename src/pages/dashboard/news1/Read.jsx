@@ -28,6 +28,7 @@ const Read = () => {
           <tr>
             <th scope="col">#</th>
             <th scope="col">Title</th>
+            <th scope="col">Day</th>
             <th scope="col">Photo</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
@@ -38,6 +39,7 @@ const Read = () => {
             <tr key={item.id}>
               <th scope="row">{c + 1}</th>
               <td>{item.title}</td>
+              <td>{item.day}</td>
               <td>
                 <img src={item.image} alt="" style={{width:"90px"}}/>
               </td>

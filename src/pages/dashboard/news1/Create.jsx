@@ -6,15 +6,17 @@ import { useAppDispatch } from '../../../tools/store'
 const Create = () => {
   const titleRef = useRef(null)
   const imageRef = useRef(null)
+  const dayRef = useRef(null)
   const dispatch = useAppDispatch();
   const sendData =(e)=>{
     e.preventDefault();
     const title = titleRef.current.value 
     const image = imageRef.current.value
-   if (!title||!image) {
+    const day = dayRef.current.value
+   if (!title||!image||!day) {
     swal("Please fill input","","warning")
    }else{
-    dispatch(addnews1([{title,image}]))
+    dispatch(addnews1([{title,image,day}]))
    }
   }
   return (
@@ -31,6 +33,11 @@ const Create = () => {
   <div className="mb-3">
     <label  className="form-label">Photo</label>
     <input type="text" className="form-control" ref={imageRef} />
+  </div>
+
+  <div className="mb-3">
+    <label  className="form-label">Day</label>
+    <input type="text" className="form-control" ref={dayRef} />
   </div>
 
   

@@ -44,9 +44,9 @@ const News = () => {
   return (
     <>
       <BlogName />
-      <div className="newscards">
+      <div className="newscards p-5">
         <div className="container">
-          {renderContent()}
+         {renderContent()}
           <Stack spacing={2}>
             <Pagination
               count={2}

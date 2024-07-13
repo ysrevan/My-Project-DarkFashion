@@ -1,9 +1,7 @@
 .newscards{
     width: 100%;
-    height: 900px;
     background-color: #000;
     .container{
-        transform: translateY(23px);
         .news1card{
             background: none;
             transition: .5s;
@@ -19,3 +17,5 @@
         }
     }
 }
+
+

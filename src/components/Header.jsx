@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FiShoppingCart } from "react-icons/fi";
 import { IoSearch } from "react-icons/io5";
@@ -8,12 +8,16 @@ import { Button, NavDropdown } from 'react-bootstrap';
 import { useCookies } from 'react-cookie';
 import { MdLogin } from "react-icons/md";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
+import { useAppSelector } from '../tools/store';
+import slugify from 'slugify';
 const Header = () => {
 
 
-  const [cookie,setCookie,removeCookie] = useCookies()
-console.log(cookie);
+  const [cookie, setCookie, removeCookie] = useCookies()
+  console.log(cookie);
 
+  const fashion = useAppSelector((state) => state.fashion) ;
+  const [keyword,setKeyword] = useState()
 
   return (
     <header>
@@ -23,62 +27,114 @@ console.log(cookie);
           <ul>
             <NavLink className="nav-link" to="/">HOME</NavLink>
             <NavDropdown title="PAGES" id="basic-nav-dropdown">
-              <NavDropdown.Item  href="/about">ABOUT</NavDropdown.Item>
-            <NavDropdown.Item href="/faq">FAQ</NavDropdown.Item>
+              <NavDropdown.Item href="/about">ABOUT</NavDropdown.Item>
+              <NavDropdown.Item href="/faq">FAQ</NavDropdown.Item>
             </NavDropdown>
             <NavLink className="nav-link" to="/shop">SHOP</NavLink>
             <NavLink className="nav-link" to="/news">NEWS</NavLink>
             <NavLink className="nav-link" to="/contact">CONTACT</NavLink>
-          </ul> 
+          </ul>
         </nav>
 
- 
+
 
         <div className="icons">
 
 
 
-          
-        {cookie["admintoken"] === "bruh84587v" ?
-  <li className="nav-item dropdown btn btn-warning dashboard-dropdown">
-  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-  <MdOutlineSpaceDashboard />
-  </a>
-  <ul className="dropdown-menu">
-    <li><Link className='export-read' to="/dashboard/category/read">Category</Link></li>
-    <li><Link className='export-read' to="/dashboard/products/read">Products</Link></li>
-    <li><Link className='export-read' to="/dashboard/news1/read">News</Link></li>
-  </ul>
-</li> : ""}
+
+          {cookie["admintoken"] === "bruh84587v" ?
+            <li className="nav-item dropdown btn btn-warning dashboard-dropdown">
+              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <MdOutlineSpaceDashboard />
+              </a>
+              <ul className="dropdown-menu">
+                <li><Link className='export-read' to="/dashboard/category/read">Category</Link></li>
+                <li><Link className='export-read' to="/dashboard/products/read">Products</Link></li>
+                <li><Link className='export-read' to="/dashboard/news1/read">News</Link></li>
+              </ul>
+            </li> : ""}
 
 
-        <IoSearch className="icon"/>
-       
-        {cookie['admintoken']?<MdLogin className='icon'  onClick={()=>{removeCookie('admintoken');
-        swal('Logout is successfull!','','success')
-        setTimeout(()=>{
-          window.location.assign('/login')
-         },2000)
-        }}
-        />
-        : cookie['cookie-fashion']?
-       <>
-         <MdLogin className='icon'  onClick={()=>{removeCookie('cookie-fashion');
-          swal('Logout is successfull!','','success')
-          setTimeout(()=>{
-            window.location.assign('/login')
-           },2000)}}/> 
-        <Link className='name' to={`/account/${cookie['cookie-fashion']}`}>{localStorage.getItem('username')}</Link>
-       </> :<NavLink to="/register"> <FaRegUser className='icon'/></NavLink>}
 
 
-        <NavLink to={`${!cookie['cookie-fashion']?"/login":"/cart"}`} className="position-relative">  
-        <FiShoppingCart className='icon' />
-   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-  0
-</span>
-</NavLink>
-        <NavLink to="wishlist"> <FaRegHeart className='icon'/></NavLink>
+
+
+          <div>
+            {/* Button trigger modal */}
+            <button type="button" className="button-icon" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <IoSearch className="icon" />
+            </button>
+            {/* Modal */}
+            <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                  </div>
+                  <div className="modal-body">
+                    <div className="input-group mb-3">
+                      <input onChange={e=>setKeyword(e.target.value)} type="text" className="form-control" placeholder="Enter product" />
+                      <button className="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                    </div>
+
+                    <ul className="list-group">
+                      {!keyword?"":fashion.filter(p=>p.title.toLocaleLowerCase().includes(keyword)).map((item)=>(
+                               
+                          <span  data-bs-dismiss="modal"  >
+                         <Link onClick={()=>{}} to={`/shop/${slugify(item.title)}`} className="list-group-item"><img height={70} width={70} style={{objectFit:"contain"}} src={item.photo} alt=""/><span className='ms-4'>{item.title}</span></Link>
+                         </span>
+                                
+                      ))}
+                        {keyword && fashion.filter(p => p.title.toLocaleLowerCase().includes(keyword)).length === 0 && (
+                        <li className="list-group-item">Not found product</li>
+                      )}
+                    </ul>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          {cookie['admintoken'] ? <MdLogin className='icon' onClick={() => {
+            removeCookie('admintoken');
+            swal('Logout is successfull!', '', 'success')
+            setTimeout(() => {
+              window.location.assign('/login')
+            }, 2000)
+          }}
+          />
+            : cookie['cookie-fashion'] ?
+              <>
+                <MdLogin className='icon' onClick={() => {
+                  removeCookie('cookie-fashion');
+                  swal('Logout is successfull!', '', 'success')
+                  setTimeout(() => {
+                    window.location.assign('/login')
+                  }, 2000)
+                }} />
+                <Link className='name' to={`/account/${cookie['cookie-fashion']}`}>{localStorage.getItem('username')}</Link>
+              </> : <NavLink to="/register"> <FaRegUser className='icon' /></NavLink>}
+
+
+
+
+          <NavLink to={`${!cookie['cookie-fashion'] ? "/login" : "/cart"}`} className="position-relative">
+            <FiShoppingCart className='icon' />
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+            </span>
+          </NavLink>
+
+
+
+          <NavLink to="wishlist"> <FaRegHeart className='icon' /></NavLink>
         </div>
 
 

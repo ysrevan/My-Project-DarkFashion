@@ -23,13 +23,21 @@ header{
             width: 15%;
             @include flex();
         .icon{
-            font-size: 20px;
-            color: #fff;
-            transition: .5s;
+            font-size: 20px !important;
+            color: #fff !important;
+            transition: .5s !important;
            
         }
-        .icon:hover{
+        .button-icon{
+            background: none;
+            border: none;
+        }
+        .button-icon:hover{
             color: #A1876A;
+            transition: .5s !important;
+        }
+        .icon:hover{
+            color: #A1876A !important;
         }
         }
         .name{
@@ -58,5 +66,8 @@ header{
           border: 2px solid #A1876A !important;
           color: #fff !important;
           border-radius: 20px !important; 
+     }
+     .btn-outline-secondary{
+        border-radius: 0% !important;
      }
 }

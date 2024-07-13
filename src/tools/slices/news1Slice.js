@@ -29,6 +29,26 @@ const news1Slice = createSlice({
     },
 
 
+    editnews1:(state, action) => {
+      const editnews1 = async () => {
+        const { error } = await supabase
+          .from('news1')
+          .update(action.payload.data)
+          .eq('id', action.payload.id);
+        if (error) {
+          console.log(error);
+        } else {
+          swal("News edited successfully", "", "success");
+          setTimeout(() => {
+            window.location.assign("http://localhost:5174/dashboard/news1/read");
+          }, 2000);
+        }
+      };
+      editnews1();
+    
+    },
+
+
     deletenews1: (state, action) => {
       const deletenews1 = async () => {
         const { error } = await supabase
@@ -54,4 +74,4 @@ const news1Slice = createSlice({
 
 export default news1Slice.reducer;
 
-export const {news1read, addnews1, deletenews1} = news1Slice.actions
+export const {news1read, addnews1, deletenews1, editnews1} = news1Slice.actions
