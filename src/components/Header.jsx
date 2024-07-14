@@ -18,7 +18,11 @@ const Header = () => {
 
   const fashion = useAppSelector((state) => state.fashion) ;
   const [keyword,setKeyword] = useState()
+  const [basket, setBasket] = useState(0);
 
+  const addToCart = () => {
+    setBasket(basket + 1);
+  };
   return (
     <header>
       <div className="container">
@@ -125,12 +129,19 @@ const Header = () => {
 
 
 
-          <NavLink to={`${!cookie['cookie-fashion'] ? "/login" : "/cart"}`} className="position-relative">
+          {/* <NavLink to={`${!cookie['cookie-fashion'] ? "/login" : "/cart"}`} className="position-relative">
             <FiShoppingCart className='icon' />
             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               0
             </span>
-          </NavLink>
+          </NavLink> */}
+
+<NavLink to={`${!cookie['cookie-fashion'] ? "/login" : "/cart"}`} className="position-relative">
+        <FiShoppingCart className='icon' />
+        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {basket}
+        </span>
+      </NavLink>
 
 
 

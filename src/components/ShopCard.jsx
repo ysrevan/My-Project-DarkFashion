@@ -16,7 +16,35 @@ const [cookie] = useCookies();
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{category}</p>
           <p className="card-text">${price}</p>
-          <button className='wishlist-button mb-3'><FaHeart className='heart' /></button>
+          <button className='wishlist-button mb-3'
+          onClick={()=>{
+            const dataSendToWishlist = async()=>{
+              const {data,error} = await supabase.from('wishlist').select();
+              const finduser = data?.find((p)=>(p.user_token === cookie['cookie-fashion']));
+              if (finduser === undefined) {
+                 const {data,error} = await supabase.from('wishlist').insert({
+                  user_token:cookie["cookie-fashion"],
+                  products:[alldata],
+                });
+                if (error) {
+                  console.log(error);
+                }else{
+                  console.log(data);
+                }
+              }else{
+              const mydata = data?.find((p)=>(p.user_token === cookie['cookie-fashion']));
+                const {error} = await supabase
+                .from('wishlist')
+                .update({user_token:cookie["cookie-fashion"],products:[...mydata.products,alldata]})
+                .eq('user_token', cookie["cookie-fashion"])
+                if (error) {
+                  console.log(error);
+                }
+              }
+               
+            }
+            dataSendToWishlist()
+          }}><FaHeart className='heart' /></button>
           <Link to={`/shop/${slugify(alldata.title)}`} className="cart-button mb-3" >READ MORE</Link>
           <button href="#" className="cart-button" onClick={()=>{
             const dataSendToBasket = async()=>{

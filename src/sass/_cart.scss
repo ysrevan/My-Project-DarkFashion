@@ -1,0 +1,11 @@
+.cart-box{
+    background-color: #000;
+    height: 870px;
+    .cart-table{
+        transform: translateY(40px);
+    }
+    .total-price{
+        color: #fff;
+        transform: translateY(40px);
+    }
+}
