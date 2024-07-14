@@ -145,7 +145,7 @@ const Header = () => {
 
 
 
-          <NavLink to="wishlist"> <FaRegHeart className='icon' /></NavLink>
+          <NavLink to={`${!cookie['cookie-fashion'] ? "/login" : "/wishlist"}`}> <FaRegHeart className='icon' /></NavLink>
         </div>
 
 
