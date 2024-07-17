@@ -3,6 +3,7 @@ import { useCookies } from 'react-cookie'
 import CartName from '../components/CartName'
 import supabase from '../config/connect'
 import Animation from '../components/Animation'
+import { Link } from 'react-router-dom'
 const Cart = () => {
   const [basket, setBasket] = useState([])
   const [cookie] = useCookies()
@@ -108,6 +109,8 @@ const Cart = () => {
         </div>
       )}
     </div>
+    <Link to="/checkout" state={{ totalPrice: calculateTotalPrice() }}>Checkout</Link>
+
    </div>
     <Animation/>
   </>
@@ -115,4 +118,3 @@ const Cart = () => {
 }
 
 export default Cart
-

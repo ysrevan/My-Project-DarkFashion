@@ -29,6 +29,8 @@ import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import Account from './pages/auth/Account';
 import ShopDetails from './pages/ShopDetails';
+import Checkout from './pages/Checkout';
+
 
 const App = () => {
   return (
@@ -61,7 +63,7 @@ const App = () => {
           <Route path='/dashboard/news1/update/:id' element={<UpdateNews />} />
 
           <Route path='/account/:token' element={<Account/>} />
-          
+          <Route path='/checkout' element={<Checkout/>}/>
 
           <Route path='*' element={<NotFoundPage />} />
         </Routes>
