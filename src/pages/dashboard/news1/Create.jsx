@@ -20,8 +20,9 @@ const Create = () => {
    }
   }
   return (
-    <div className='container'>
-       <h1 style={{textAlign:"center"}}>Create News</h1>
+       <div className="newscreate-box">
+            <div className='container'>
+       <h1 className='newscreate-title' style={{textAlign:"center"}}>Create News</h1>
         <div className="d-flex align-items-center justify-content-center">
          
 <form className='col-6 mb-5' onSubmit={sendData}>
@@ -42,11 +43,12 @@ const Create = () => {
 
   
 
-  <button type="submit" className="btn btn-primary">Create</button>
+  <button type="submit" className="create-btn">Create</button>
 </form>
 
         </div>
     </div>
+       </div>
   )
 }
 

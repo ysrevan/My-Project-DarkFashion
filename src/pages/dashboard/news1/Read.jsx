@@ -20,7 +20,8 @@ const Read = () => {
     <NewsReadName/>
       
 
-    <div className='container'>
+      <div className="newsread-box">
+      <div className='container'>
     <Link to="/dashboard/news1/Create"><button className='productscategory mt-3 mb-3'>Create News</button></Link>
 
       <table className="table">
@@ -45,11 +46,11 @@ const Read = () => {
               </td>
 
               <td>
-              <Link to={`/dashboard/news1/update/${item.id}`} className="btn btn-warning">Edit</Link>
+              <Link to={`/dashboard/news1/update/${item.id}`}><button className="edit-btn">Edit</button></Link>
 
               </td>
               <td>
-              <button className="btn btn-danger" onClick={() => handleDelete(item.id)}>Delete</button>
+              <button className="delete-btn" onClick={() => handleDelete(item.id)}>Delete</button>
               </td>
             </tr>
           ))}
@@ -57,6 +58,7 @@ const Read = () => {
       </table>
     </div>
 
+      </div>
 
     <Animation/>
     </>

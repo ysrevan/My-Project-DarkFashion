@@ -39,6 +39,8 @@ const [cookie] = useCookies();
                 .eq('user_token', cookie["cookie-fashion"])
                 if (error) {
                   console.log(error);
+                }else{
+                  swal("Product added to wishlist!","","success")
                 }
               }
                
@@ -59,6 +61,7 @@ const [cookie] = useCookies();
                   console.log(error);
                 }else{
                   console.log(data);
+                  alert("Product added to cart!");
                 }
               }else{
               const mydata = data?.find((p)=>(p.user_token === cookie['cookie-fashion']));
@@ -68,6 +71,8 @@ const [cookie] = useCookies();
                 .eq('user_token', cookie["cookie-fashion"])
                 if (error) {
                   console.log(error);
+                }else{
+                  swal("Product added to cart!","","success")
                 }
               }
                

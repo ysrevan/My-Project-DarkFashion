@@ -5,6 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { FaHome } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <footer>
@@ -27,36 +28,36 @@ const Footer = () => {
                     <div className="col mb-3">
                         <h5>ORDER ASSISTANCE</h5>
                         <ul className="nav flex-column">
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Book An Appoinment</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Shipping & Delivery</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Returns & Refunds</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Gift Wrapping</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Follow Your Order</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Stores</a></li>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Book An Appoinment</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Shipping & Delivery</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Returns & Refunds</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Gift Wrapping</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Follow Your Order</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Stores</a></Link>
                         </ul>
                     </div>
 
                     <div className="col mb-3">
                         <h5>COMPANY</h5>
                         <ul className="nav flex-column">
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">About Us</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Awards</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Our Mission</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Privacy Policy</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Press Release</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Hire Me</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Affiliates And Creators</a></li>
+                            <Link to="/about" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">About Us</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Awards</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Our Mission</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Privacy Policy</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Press Release</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Hire Me</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Affiliates And Creators</a></Link>
                         </ul>
                     </div>
 
                     <div className="col mb-3">
                         <h5>SUPPORT</h5>
                         <ul className="nav flex-column">
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">FAQ</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Shipping And Returns</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Tracking</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Size Charts</a></li>
-                            <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Gift Cards</a></li>
+                            <Link to="/faq" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">FAQ</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Shipping And Returns</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Tracking</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Size Charts</a></Link>
+                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">Gift Cards</a></Link>
                         </ul>
                     </div>
 

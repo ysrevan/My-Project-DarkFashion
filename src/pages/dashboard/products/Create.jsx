@@ -22,8 +22,9 @@ const Create = () => {
    }
   }
   return (
-    <div className='container'>
-       <h1 style={{textAlign:"center"}}>Create Products</h1>
+   <div className="productscreat-box">
+     <div className='container'>
+       <h1 className='productscreat-title' style={{textAlign:"center"}}>Create Products</h1>
         <div className="d-flex align-items-center justify-content-center">
          
 <form className='col-6 mb-5' onSubmit={sendData}>
@@ -47,11 +48,12 @@ const Create = () => {
     <input type="text" className="form-control" ref={priceRef} />
   </div>
 
-  <button type="submit" className="btn btn-primary">Create</button>
+  <button type="submit" className="create-btn">Create</button>
 </form>
 
         </div>
     </div>
+   </div>
   )
 }
 

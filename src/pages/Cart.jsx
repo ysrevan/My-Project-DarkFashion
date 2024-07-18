@@ -89,16 +89,17 @@ const Cart = () => {
               <td>{item.title} | {item.category}</td>
               <td>${item.price * (quantities[item.id] || 1)}</td>
               <td>
-                <button onClick={() => decrement(item.id)}>-</button>
+                <button className='decrement-btn' onClick={() => decrement(item.id)}>-</button>
                 <span className='mx-3'>{quantities[item.id] || 1}</span>
-                <button onClick={() => increment(item.id)}>+</button>
+                <button className='increment-btn' onClick={() => increment(item.id)}>+</button>
               </td>
               <td>
-                <button onClick={async () => {
+                <button className='delete-btn' onClick={async () => {
                   deleteCart(findbasket.id, item.id)
                   window.location.reload()
                 }}>X</button>
               </td>
+              
             </tr>
           )))}
         </tbody>
@@ -108,9 +109,13 @@ const Cart = () => {
           <h3 className='total-price mt-4' style={{textAlign:"center"}}>Total Price: ${calculateTotalPrice().toFixed(2)}</h3>
         </div>
       )}
+      
+        
     </div>
-    <Link to="/checkout" state={{ totalPrice: calculateTotalPrice() }}>Checkout</Link>
-
+   
+   <div className="checkout">
+   <Link to="/checkout" state={{ totalPrice: calculateTotalPrice() }}><button className='checkout-btn' style={{textAlign:"center"}} >Checkout</button></Link>
+   </div>
    </div>
     <Animation/>
   </>

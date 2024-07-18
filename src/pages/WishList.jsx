@@ -58,7 +58,7 @@ const WishList = () => {
               <td>${item.price}</td>
             
               <td>
-                <button onClick={async () => {
+                <button className='delete-btn' onClick={async () => {
                   deleteWishlist(findwishlist.id, item.id)
                   window.location.reload()
                 }}>X</button>

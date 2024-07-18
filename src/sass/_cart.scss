@@ -7,4 +7,41 @@
         color: #fff;
         transform: translateY(40px);
     }
+    .checkout{
+        transform: translateY(-10px);
+        .checkout-btn{
+        background-color: #A1876A;
+        color: #fff;
+        border: 1px solid #A1876A;
+        padding: 10px 15px 10px 15px;
+        border-radius: 50px;
+        transition: .5s;
+        }
+        .checkout-btn:hover{
+        background: none;
+        border: 1px solid #A1876A;
+        }
+    }
+    .delete-btn{
+        background-color: #A1876A;
+        color: #fff;
+        border: 1px solid #A1876A;
+        padding: 10px 15px 10px 15px;
+        border-radius: 50px;
+        transition: .5s;
+    }
+    .decrement-btn{
+        background-color: #A1876A;
+        color: #fff;
+        border: 1px solid #A1876A;
+        padding: 10px 15px 10px 15px;
+        border-radius: 10px;
+    }
+    .increment-btn{
+        background-color: #A1876A;
+        color: #fff;
+        border: 1px solid #A1876A;
+        padding: 10px 15px 10px 15px;
+        border-radius: 10px;
+    }
 }

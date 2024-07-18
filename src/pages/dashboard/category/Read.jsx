@@ -34,10 +34,10 @@ const Read = () => {
         <th scope="row">{c+1}</th>
         <td>{item.title}</td>
         <td>
-                <Link to={`/dashboard/category/update/${item.id}`} className="btn btn-warning">Edit</Link>
+                <Link to={`/dashboard/category/update/${item.id}`}><button className="edit-btn">Edit</button></Link>
               </td>
               <td>
-              <button className="btn btn-danger" onClick={() => handleDelete(item.id)}>Delete</button>
+              <button className="delete-btn" onClick={() => handleDelete(item.id)}>Delete</button>
               </td>
       </tr>
     ))}

@@ -1,14 +1,21 @@
-.wishlist-box{
+.categoryedit-box{
     background-color: #000;
-    .wishlist-table{
-        transform: translateY(30px);
+    .categoryedit-title{
+        color: #fff;
     }
-    .delete-btn{
+    .form-label{
+        color: #fff;
+    }
+    .edit-btn{
         background-color: #A1876A;
         color: #fff;
         border: 1px solid #A1876A;
         padding: 10px 15px 10px 15px;
         border-radius: 50px;
         transition: .5s;
+    }
+    .edit-btn:hover{
+        background: none;
+        border: 1px solid #A1876A;
     }
 }

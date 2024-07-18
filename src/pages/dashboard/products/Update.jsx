@@ -23,8 +23,9 @@ const Update = () => {
    }
   }
   return (
-    <div className='container'>
-       <h1 style={{textAlign:"center"}}>Edit Products</h1>
+      <div className="productsedit-box">
+           <div className='container'>
+       <h1 className='productsedit-title' style={{textAlign:"center"}}>Edit Products</h1>
         <div className="d-flex align-items-center justify-content-center">
          
 <form className='col-6 mb-5' onSubmit={sendData}>
@@ -56,11 +57,12 @@ const Update = () => {
     value={price}/>
   </div>
 
-  <button type="submit" className="btn btn-primary">Edit</button>
+  <button type="submit" className="edit-btn">Edit</button>
 </form>
 
         </div>
     </div>
+      </div>
   )
 }
 

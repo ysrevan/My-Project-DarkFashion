@@ -43,10 +43,10 @@ const Read = () => {
               <td>{item.category}</td>
               <td>${item.price}</td>
               <td>
-              <Link to={`/dashboard/products/update/${item.id}`} className="btn btn-warning">Edit</Link>
+              <Link to={`/dashboard/products/update/${item.id}`}><button className="edit-btn">Edit</button></Link>
               </td>
               <td>
-                <button className="btn btn-danger" onClick={() => handleDelete(item.id)}>Delete</button>
+                <button className="delete-btn" onClick={() => handleDelete(item.id)}>Delete</button>
               </td>
             </tr>
           ))}
