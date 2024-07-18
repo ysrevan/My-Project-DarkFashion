@@ -1,0 +1,61 @@
+.contactcards{
+    background-color: #000;
+    height: 800px;
+    .city-img{
+        transform: translateY(150px);
+        .card{
+            background: none;
+        }
+    }
+    .address-card{
+        transform: translateY(200px);
+        .card{
+            background-color: #23201E;
+            .card-title{
+                color: #fff;
+            }
+            .card-text{
+                color: #fff;
+            }
+        }
+        .contact-telephone{
+            display: flex;
+            .telephone{
+                margin-top: 5px;
+                margin-right: 10px;
+                color: #fff;
+                font-size: 18px;
+            }
+            .telephone-number{
+                color: #fff;
+                font-size: 18px;
+            }
+        }
+        .contact-email{
+            display: flex; 
+        }
+        .email{
+            margin-top: 5px;
+            margin-right: 10px;
+            color: #fff;
+            font-size: 18px;
+        }
+        .email-address{
+            color: #fff;
+            font-size: 18px;
+        }
+        .contact-watch{
+            display: flex; 
+        }
+        .watch{
+            margin-top: 5px;
+            margin-right: 10px;
+            color: #fff;
+            font-size: 18px;
+        }
+        .watch-time{
+            color: #fff;
+            font-size: 18px;
+        }
+    }
+}
