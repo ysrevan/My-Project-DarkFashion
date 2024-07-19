@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FiShoppingCart } from "react-icons/fi";
 import { IoSearch } from "react-icons/io5";
@@ -10,6 +10,8 @@ import { MdLogin } from "react-icons/md";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { useAppSelector } from '../tools/store';
 import slugify from 'slugify';
+import { MdDarkMode } from "react-icons/md";
+import { LangContext } from '../context/LangContext';
 const Header = () => {
 
 
@@ -23,26 +25,46 @@ const Header = () => {
   const addToCart = () => {
     setBasket(basket + 1);
   };
+
+  const [lang,setLang] = useContext(LangContext)
   return (
     <header>
       <div className="container">
         <img src="https://darkfashion.wpengine.com/wp-content/uploads/2023/09/Light-logo.svg" alt="" />
         <nav>
           <ul>
-            <NavLink className="nav-link" to="/">HOME</NavLink>
-            <NavDropdown title="PAGES" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/about">ABOUT</NavDropdown.Item>
+            <NavLink className="nav-link" to="/">{lang==="EN"?"HOME":"ANA SƏHİFƏ"}</NavLink>
+            <NavDropdown title={lang==="EN"?"PAGES":"SƏHİFƏLƏR"} id="basic-nav-dropdown">
+              <NavDropdown.Item href="/about">{lang==="EN"?"ABOUT":"HAQQIMIZDA"}</NavDropdown.Item>
               <NavDropdown.Item href="/faq">FAQ</NavDropdown.Item>
             </NavDropdown>
-            <NavLink className="nav-link" to="/shop">SHOP</NavLink>
-            <NavLink className="nav-link" to="/news">NEWS</NavLink>
-            <NavLink className="nav-link" to="/contact">CONTACT</NavLink>
+            <NavLink className="nav-link" to="/shop">{lang==="EN"?"SHOP":"MAĞAZA"}</NavLink>
+            <NavLink className="nav-link" to="/news">{lang==="EN"?"NEWS":"XƏBƏRLƏR"}</NavLink>
+            <NavLink className="nav-link" to="/contact">{lang==="EN"?"CONTACT":"ƏLAQƏ"}</NavLink>
           </ul>
         </nav>
 
 
 
         <div className="icons">
+
+{/* 
+      <li className="nav-item dropdown">
+  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+     
+  </a>
+  <ul className="dropdown-menu">
+    <li><a className="dropdown-item" href="#">AZ</a></li>
+    <li><a className="dropdown-item" href="#">EN</a></li>
+  </ul>
+</li> */}
+
+     <button className='language-btn' onClick={()=>{
+    lang==="EN"?setLang("AZ"):setLang("EN");
+    lang==="EN"?localStorage.setItem("lang","AZ"):localStorage.setItem("lang","EN");
+    }}>{lang}</button>
+     <button className='darklight-btn'><MdDarkMode/></button>
+
 
 
 

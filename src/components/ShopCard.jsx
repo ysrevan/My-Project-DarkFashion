@@ -30,6 +30,10 @@ const [cookie] = useCookies();
                   console.log(error);
                 }else{
                   console.log(data);
+                  swal("Please login the page", "", "success");
+                  setTimeout(() => {
+                    window.location.assign("http://localhost:5173/login");
+                  }, 2000);
                 }
               }else{
               const mydata = data?.find((p)=>(p.user_token === cookie['cookie-fashion']));
@@ -61,7 +65,10 @@ const [cookie] = useCookies();
                   console.log(error);
                 }else{
                   console.log(data);
-                  alert("Product added to cart!");
+                  swal("Please login the page", "", "success");
+                  setTimeout(() => {
+                    window.location.assign("http://localhost:5173/login");
+                  }, 2000);
                 }
               }else{
               const mydata = data?.find((p)=>(p.user_token === cookie['cookie-fashion']));

@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import AOS from 'aos';
-
+import { LangContext } from '../context/LangContext';
 const Cool = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000, 
     });
   }, []);
+  const [lang,setLang] = useContext(LangContext)
   return (
     <div className='cool'>
       <div className='box'>
@@ -19,8 +20,8 @@ const Cool = () => {
           <div className='cool-text mx-3'>
             <div className="text-1">
             <div data-aos="fade-right">
-            <h5>COOL LOOK</h5>
-              <h1>We comprehend your<br></br> style needs and create<br></br> wonderful clothing</h1>
+            <h5>{lang==="EN"?"COOL LOOK":"GÖRÜNÜŞ"}</h5>
+              <h1>{lang==="EN"?"We comprehend your style needs and create wonderful clothing":"Səni anlayırıq üslub tələb edir və yaradır gözəl geyim"}</h1>
             </div>
             </div>
             <div data-aos="fade-left">

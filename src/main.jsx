@@ -11,6 +11,7 @@ import { Provider } from 'react-redux'
 import store from './tools/store'
 import { categorydata, fashiondata, homedata, userdata, news1data, news2data } from './tools/func/shopdata'
 import { CartProvider } from 'react-use-cart'
+import { LangProvider } from './context/LangContext'
 
 
 fashiondata();
@@ -29,10 +30,12 @@ news2data()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <LangProvider>
     <Provider store={store}>
       <CartProvider>
       <App />
       </CartProvider>
     </Provider>
+    </LangProvider>
   </React.StrictMode>,
 )

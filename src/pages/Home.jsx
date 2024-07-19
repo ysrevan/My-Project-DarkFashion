@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Carousel from '../components/Carousel';
 import Company from '../components/Company';
@@ -11,6 +11,7 @@ import Preloader from '../components/Preloader';
 import Service from '../components/Service';
 import Youtube from '../components/Youtube';
 import AOS from 'aos';
+import { LangContext } from '../context/LangContext';
 const Home = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -24,6 +25,7 @@ const Home = () => {
     });
   }, []);
   const home = useSelector((state)=> state.home)
+  const [lang,setLang] = useContext(LangContext)
   return (
     <>
       {data.length === 0 ? (<Preloader/>) : (
@@ -36,8 +38,8 @@ const Home = () => {
 
      
       <div className="homecard-text">
-       <h5>RECENT PRODUCTS</h5>
-       <h1>Enduringly Stylish Materials</h1>
+       <h5>{lang==="EN"?"RECENT PRODUCTS":"SON MƏHSULLAR"}</h5>
+       <h1>{lang==="EN"?"Enduringly Stylish Materials":"Davamlı Qəşəng Materiallar"}</h1>
       </div>
       <div data-aos="fade-down">
         <div className="row">
