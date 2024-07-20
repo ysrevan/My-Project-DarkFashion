@@ -1,8 +1,8 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import swal from 'sweetalert';
 import { addnews1 } from '../../../tools/slices/news1Slice';
 import { useAppDispatch } from '../../../tools/store'
-
+import { LangContext } from '../../../context/LangContext'
 const Create = () => {
   const titleRef = useRef(null)
   const imageRef = useRef(null)
@@ -19,31 +19,32 @@ const Create = () => {
     dispatch(addnews1([{title,image,day}]))
    }
   }
+  const [lang,setLang] = useContext(LangContext)
   return (
        <div className="newscreate-box">
             <div className='container'>
-       <h1 className='newscreate-title' style={{textAlign:"center"}}>Create News</h1>
+       <h1 className='newscreate-title' style={{textAlign:"center"}}>{lang==="EN"?"Create News":"Xəbər Yaradın"}</h1>
         <div className="d-flex align-items-center justify-content-center">
          
 <form className='col-6 mb-5' onSubmit={sendData}>
   <div className="mb-3">
-    <label  className="form-label">Title</label>
+    <label  className="form-label">{lang==="EN"?"Title":"Başlıq"}</label>
     <input type="text" className="form-control" ref={titleRef} />
   </div>
 
   <div className="mb-3">
-    <label  className="form-label">Photo</label>
+    <label  className="form-label">{lang==="EN"?"Photo":"Şəkil"}</label>
     <input type="text" className="form-control" ref={imageRef} />
   </div>
 
   <div className="mb-3">
-    <label  className="form-label">Day</label>
+    <label  className="form-label">{lang==="EN"?"Day":"Gün"}</label>
     <input type="text" className="form-control" ref={dayRef} />
   </div>
 
   
 
-  <button type="submit" className="create-btn">Create</button>
+  <button type="submit" className="create-btn">{lang==="EN"?"Create":"Yarat"}</button>
 </form>
 
         </div>

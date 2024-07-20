@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deletefashion } from '../../../tools/slices/fashionSlice';
 import { useAppSelector } from '../../../tools/store';
 import Animation from '../../../components/Animation'
 import ProductsReadName from '../../../components/ProductsReadName';
+import { LangContext } from '../../../context/LangContext';
 const Read = () => {
   const dispatch = useDispatch(); 
   const fashion = useAppSelector((state) => state.fashion); 
@@ -12,24 +13,24 @@ const Read = () => {
   const handleDelete = (id) => {
     dispatch(deletefashion({ id }));
   };
-
+  const [lang,setLang] = useContext(LangContext)
   return (
 <>
 <ProductsReadName/>
 <div className="productsread-box">
      <div className='container'>
       
-      <Link to="/dashboard/products/Create"><button className='productscategory mt-3 mb-3'>Create Products</button></Link>
+      <Link to="/dashboard/products/Create"><button className='productscategory mt-3 mb-3'>{lang==="EN"?"Create Products":"Məhsul Yaradın"}</button></Link>
       <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Photo</th>
-            <th scope="col">Category</th>
-            <th scope="col">Price</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
+            <th scope="col">{lang==="EN"?"Title":"Başlıq"}</th>
+            <th scope="col">{lang==="EN"?"Photo":"Şəkil"}</th>
+            <th scope="col">{lang==="EN"?"Category":"Kateqoriya"}</th>
+            <th scope="col">{lang==="EN"?"Price":"Qiymət"}</th>
+            <th scope="col">{lang==="EN"?"Edit":"Yenilə"}</th>
+            <th scope="col">{lang==="EN"?"Delete":"Sil"}</th>
           </tr>
         </thead>
         <tbody>
@@ -43,10 +44,10 @@ const Read = () => {
               <td>{item.category}</td>
               <td>${item.price}</td>
               <td>
-              <Link to={`/dashboard/products/update/${item.id}`}><button className="edit-btn">Edit</button></Link>
+              <Link to={`/dashboard/products/update/${item.id}`}><button className="edit-btn">{lang==="EN"?"Edit":"Yenilə"}</button></Link>
               </td>
               <td>
-                <button className="delete-btn" onClick={() => handleDelete(item.id)}>Delete</button>
+                <button className="delete-btn" onClick={() => handleDelete(item.id)}>{lang==="EN"?"Delete":"Sil"}</button>
               </td>
             </tr>
           ))}

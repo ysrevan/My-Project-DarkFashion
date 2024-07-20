@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import AOS from 'aos';
 import { LangContext } from '../context/LangContext';
+import { Link } from 'react-router-dom';
 
 const Custom = () => {
   useEffect(() => {
@@ -19,8 +20,8 @@ const Custom = () => {
          <div data-aos="fade-up" style={{overflow:"hidden"}}>
          <h6>{lang==="EN"?"SUPREME QUALITY":"ƏLA KEYFİYYƏT"}</h6>
         <h1>{lang==="EN"?"Custom Made Men’s Suits":"Sifarişlə Kişi Kostyumları"}</h1>
-        <p>Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Nulla<br></br>
-          facilisi cras fermentum odio eu. Nunc sed augue.</p>
+        <p><span>{lang==="EN"?"Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Nulla":"İsdədiyiniz növdə kişi kostuyumlarını"}</span><br></br>
+          <span>{lang==="EN"?"facilisi cras fermentum odio eu. Nunc sed augue.":"biz sizə sifərişlə gətiririk."}</span></p>
 
          </div>
          
@@ -36,7 +37,7 @@ const Custom = () => {
             <div className="card-body">
               <h5 className="card-title">Double Breasted Blazer</h5>
               <p className="card-text">$8.00-$580.00</p>
-              <a href="#" className="btn btn-primary">{lang==="EN"?"SELECT OPTIONS":"SEÇİM SEÇİN"}</a>
+              <Link to="/shop"><a href="#" className="btn btn-primary">{lang==="EN"?"SELECT OPTIONS":"SEÇİM SEÇİN"}</a></Link>
             </div>
           </div>
 
@@ -51,7 +52,7 @@ const Custom = () => {
             <div className="card-body">
               <h5 className="card-title">Retro Style Blazer</h5>
               <p className="card-text">$8.00-$335.00</p>
-              <a href="#" className="btn btn-primary">{lang==="EN"?"SELECT OPTIONS":"SEÇİM SEÇİN"}</a>
+              <Link to="/shop"><a href="#" className="btn btn-primary">{lang==="EN"?"SELECT OPTIONS":"SEÇİM SEÇİN"}</a></Link>
             </div>
           </div>
 

@@ -75,9 +75,9 @@ const Header = () => {
                 <MdOutlineSpaceDashboard />
               </a>
               <ul className="dropdown-menu">
-                <li><Link className='export-read' to="/dashboard/category/read">Category</Link></li>
-                <li><Link className='export-read' to="/dashboard/products/read">Products</Link></li>
-                <li><Link className='export-read' to="/dashboard/news1/read">News</Link></li>
+                <li><Link className='export-read' to="/dashboard/category/read">{lang==="EN"?"Category":"Kateqoriya"}</Link></li>
+                <li><Link className='export-read' to="/dashboard/products/read">{lang==="EN"?"Products":"Məhsullar"}</Link></li>
+                <li><Link className='export-read' to="/dashboard/news1/read">{lang==="EN"?"News":"Xəbərlər"}</Link></li>
               </ul>
             </li> : ""}
 
@@ -96,13 +96,13 @@ const Header = () => {
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
-                    <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">{lang==="EN"?"Title":"Başlıq"}</h1>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                   </div>
                   <div className="modal-body">
                     <div className="input-group mb-3">
-                      <input onChange={e=>setKeyword(e.target.value)} type="text" className="form-control" placeholder="Enter product" />
-                      <button className="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                      <input onChange={e=>setKeyword(e.target.value)} type="text" className="form-control" placeholder={lang==="EN"?"Enter product":"Məhsul daxil et"} />
+                      <button className="btn btn-outline-secondary" type="button" id="button-addon2">{lang==="EN"?"Search":"Axtar"}</button>
                     </div>
 
                     <ul className="list-group">
@@ -114,7 +114,7 @@ const Header = () => {
                                 
                       ))}
                         {keyword && fashion.filter(p => p.title.toLocaleLowerCase().includes(keyword)).length === 0 && (
-                        <li className="list-group-item">Not found product</li>
+                        <li className="list-group-item">{lang==="EN"?"Not found product":"Məhsul tapılmadı"}</li>
                       )}
                     </ul>
 

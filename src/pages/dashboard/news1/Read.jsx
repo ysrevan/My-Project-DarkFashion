@@ -5,6 +5,8 @@ import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../../tools/store';
 import { Link } from 'react-router-dom';
 import { deletenews1 } from '../../../tools/slices/news1Slice';
+import { useContext } from 'react';
+import { LangContext } from '../../../context/LangContext';
 const Read = () => {
 
   const dispatch = useDispatch(); 
@@ -14,6 +16,7 @@ const Read = () => {
     dispatch(deletenews1({ id }));
   };
 
+  const [lang,setLang] = useContext(LangContext)
 
   return (
     <>
@@ -22,17 +25,17 @@ const Read = () => {
 
       <div className="newsread-box">
       <div className='container'>
-    <Link to="/dashboard/news1/Create"><button className='productscategory mt-3 mb-3'>Create News</button></Link>
+    <Link to="/dashboard/news1/Create"><button className='productscategory mt-3 mb-3'>{lang==="EN"?"Create News":"Xəbər Yarat"}</button></Link>
 
       <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Day</th>
-            <th scope="col">Photo</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
+            <th scope="col">{lang==="EN"?"Title":"Başlıq"}</th>
+            <th scope="col">{lang==="EN"?"Day":"Gün"}</th>
+            <th scope="col">{lang==="EN"?"Photo":"Şəkil"}</th>
+            <th scope="col">{lang==="EN"?"Edit":"Yenilə"}</th>
+            <th scope="col">{lang==="EN"?"Delete":"Sil"}</th>
           </tr>
         </thead>
         <tbody>
@@ -46,11 +49,11 @@ const Read = () => {
               </td>
 
               <td>
-              <Link to={`/dashboard/news1/update/${item.id}`}><button className="edit-btn">Edit</button></Link>
+              <Link to={`/dashboard/news1/update/${item.id}`}><button className="edit-btn">{lang==="EN"?"Edit":"Yenilə"}</button></Link>
 
               </td>
               <td>
-              <button className="delete-btn" onClick={() => handleDelete(item.id)}>Delete</button>
+              <button className="delete-btn" onClick={() => handleDelete(item.id)}>{lang==="EN"?"Delete":"Sil"}</button>
               </td>
             </tr>
           ))}

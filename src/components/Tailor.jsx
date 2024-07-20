@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import AOS from 'aos';
+import { LangContext } from '../context/LangContext';
+import { Link } from 'react-router-dom';
 
 const Tailor = () => {
   useEffect(() => {
@@ -9,19 +11,20 @@ const Tailor = () => {
       duration: 1000, 
     });
   }, []);
+  const [lang,setLang] = useContext(LangContext)
   return (
     <div className='tailor'>
         <div className="container">
         <div data-aos="fade-up">
         <div className="tailor-text">
-                <h5>TAILORS & DESIGNERS</h5>
-                <h1>Our varied<br></br>
-                 fashion business<br></br>
-                 is value-driven</h1>
-                 <p>Sollicitudin ac orci phasellus egestas tellus. Amet nisl<br></br>
-                     purus in mollis nunc<br></br>
-                     sed id. Cursus eget nunc scelerisque viverra mauris in aliquam.</p>
-                     <button>BOOK YOUR TRAINERS</button>
+                <h5>{lang==="EN"?"TAILORS & DESIGNERS":"DƏRZİLƏR VƏ DİZAYNERLƏR"}</h5>
+                <h1><span>{lang==="EN"?"Our varied":"Bizim müxtəlif"}</span><br></br>
+                 <span>{lang==="EN"?"fashion business":"moda biznesimiz"}</span><br></br>
+                {lang==="EN"?" is value-driven":"dəyər yönümlüdür"}</h1>
+                 <p><span>{lang==="EN"?"Sollicitudin ac orci phasellus egestas tellus. Amet nisl":"Öz zövqünüuzə və modanıza"}</span><br></br>
+                     <span>{lang==="EN"?"purus in mollis nunc":"uyğun olan"}</span><br></br>
+                     {lang==="EN"?"sed id. Cursus eget nunc scelerisque viverra mauris in aliquam.":"təlimçilərinizi seçin."}</p>
+                     <Link to="/shop"><button>{lang==="EN"?"BOOK YOUR TRAINERS":"TƏLİMÇİLƏRİNİZİ SİFARİŞ EDİN"}</button></Link>
             </div>
         </div>
             

@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { CiDeliveryTruck } from "react-icons/ci";
 import { BsTelephone } from "react-icons/bs";
 import { BsBox } from "react-icons/bs";
 import { IoCartOutline } from "react-icons/io5";
+import { LangContext } from '../context/LangContext';
 const Service = () => {
+  const [lang,setLang] = useContext(LangContext)
   return (
     <div className='service'>
         <div className="container">
@@ -16,8 +18,8 @@ const Service = () => {
     </div>
     <div className="col-md-8">
       <div className="card-body">
-        <h5 className="card-title">SHIPPING</h5>
-        <p className="card-text">Free Shipping<br></br> World wide</p>
+        <h5 className="card-title">{lang==="EN"?"SHIPPING":"GÖNDƏRMƏ"}</h5>
+        <p className="card-text"><span>{lang==="EN"?"Free Shipping":"Dünya boyu"}</span><br></br><span>{lang==="EN"?" World wide":"pulsuz çatdırılma"}</span></p>
       </div>
     </div>
   </div>
@@ -34,8 +36,8 @@ const Service = () => {
     </div>
     <div className="col-md-8">
       <div className="card-body">
-        <h5 className="card-title">HASSLE FREE</h5>
-        <p className="card-text">24*7 Customer<br></br> Support</p>
+        <h5 className="card-title">{lang==="EN"?"HASSLE FREE":"PULSUZ ZƏNGLƏR"}</h5>
+        <p className="card-text"><span>{lang==="EN"?"24*7 Customer":"24*7 Müştəri"}</span><br></br>{lang==="EN"?"Support":"Dəstəyi"}</p>
       </div>
     </div>
   </div>
@@ -53,8 +55,8 @@ const Service = () => {
     </div>
     <div className="col-md-8">
       <div className="card-body">
-        <h5 className="card-title">30 DAYS</h5>
-        <p className="card-text">Free & Easy Returns</p>
+        <h5 className="card-title">{lang==="EN"?"30 DAYS":"30 GÜN"}</h5>
+        <p className="card-text">{lang==="EN"?"Free & Easy Returns":"Pulsuz və Asan Qaytarmalar"}</p>
       </div>
     </div>
   </div>
@@ -71,8 +73,8 @@ const Service = () => {
     </div>
     <div className="col-md-8">
       <div className="card-body">
-        <h5 className="card-title">SECURED</h5>
-        <p className="card-text">Quick Check Out Process</p>
+        <h5 className="card-title">{lang==="EN"?"SECURED":"TƏHLÜKƏSİZ"}</h5>
+        <p className="card-text">{lang==="EN"?"Quick Check Out Process":"Tez Çıxış Prosesi"}</p>
       </div>
     </div>
   </div>

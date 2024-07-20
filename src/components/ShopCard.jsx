@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useCookies } from 'react-cookie';
 import { FaHeart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import slugify from 'slugify';
 import supabase from '../config/connect';
-
+import { LangContext } from '../context/LangContext';
 const ShopCard = ({img, title, category, price, alldata }) => {
 const [cookie] = useCookies(); 
-
+const [lang,setLang] = useContext(LangContext)
   return (
     <div className="col-12 col-sm-6 col-md-3 mt-5 mb-5">
       <div className="card">
@@ -51,7 +51,7 @@ const [cookie] = useCookies();
             }
             dataSendToWishlist()
           }}><FaHeart className='heart' /></button>
-          <Link to={`/shop/${slugify(alldata.title)}`} className="cart-button mb-3" >READ MORE</Link>
+          <Link to={`/shop/${slugify(alldata.title)}`} className="cart-button mb-3" >{lang==="EN"?"READ MORE":"ƏTRAFLI OXU"}</Link>
           <button href="#" className="cart-button" onClick={()=>{
             const dataSendToBasket = async()=>{
               const {data,error} = await supabase.from('basket').select();
@@ -85,7 +85,7 @@ const [cookie] = useCookies();
                
             }
             dataSendToBasket()
-          }}>ADD TO CART</button>
+          }}>{lang==="EN"?"ADD TO CART":"SƏBƏTƏ ƏLAVƏ ET"}</button>
         </div>
       </div>
     </div>
