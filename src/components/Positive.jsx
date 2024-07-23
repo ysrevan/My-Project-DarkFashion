@@ -25,7 +25,7 @@ const Positive = () => {
           <h5>{lang==="EN"?"REVIEW & RATINGS":"ŞƏRHLƏR VƏ REYTİNQLƏR"}</h5>
           <h1><span>{lang==="EN"?"Positive":"Müsbət"}</span><br /><span>{lang==="EN"?"Customers":"Müştərilər"}</span><br /><span>{lang==="EN"?"Feedback":"Əlaqə"}</span></h1>
           <p><span>{lang==="EN"?"Pretium lectus quam id leo in. In massa tempor":"Müştərilərlə müsbət"}</span><br />
-            <span>{lang==="EN"?"nec feugiat nisl pretium fusce. Libero enim sed":"müsbət əlaqə"}</span><br /> 
+            <span>{lang==="EN"?"nec feugiat nisl pretium fusce. Libero enim sed":"əlaqə"}</span><br /> 
             <span>{lang==="EN"?"faucibus turpis in eu mi bibendum neque. Eget":"bizim işimizin keyfiyyətidir."}</span><br /></p>
         </div>
       </div>
@@ -65,11 +65,11 @@ const Positive = () => {
               </div>
               </div>
               <div className="card-body">
-                <p className="card-text">Dignissim sodales ut eu sem<br></br>
-                integer vitae. Curabitur<br></br>
-                gravida arcu ac tortor. Est sit<br></br>
-                amet facilisis magna etiam<br></br>
-                tempor orci eu.</p>
+                <p className="card-text"><span>{lang==="EN"?"Dignissim sodales ut eu sem":"İşçilərimiz müştərilərin ehtiyaclarını "}</span><br></br>
+                <span>{lang==="EN"?"integer vitae. Curabitur":"anlamaq və onlara ən yaxşı xidməti"}</span><br></br>
+                <span>{lang==="EN"?"gravida arcu ac tortor. Est sit":" göstərmək üçün hər zaman diqqətli"}</span><br></br>
+                {lang==="EN"?"amet facilisis magna etiam":"və anlayışlı davranırlar."}
+                </p>
               </div>
             </div>
           </SwiperSlide>
@@ -87,10 +87,10 @@ const Positive = () => {
               </div>
               </div>
               <div className="card-body">
-                <p className="card-text">Commodo ullamcorper a<br></br>
-                lacus vestibulum sed arcu<br></br>
-                non. Vulputate dignissim<br></br>
-                suspendisse in est ante in.</p>
+                <p className="card-text"><span>{lang==="EN"?"Commodo ullamcorper a":"Müştərilərin məmnuniyyətini prioritet "}</span><br></br>
+                <span>{lang==="EN"?"lacus vestibulum sed arcu":"tutan işçilərimiz, hər bir müştəriyə"}</span><br></br>
+                <span>{lang==="EN"?"non. Vulputate dignissim":" fərdi yanaşma göstərərək uzunmüddətli "}</span><br></br>
+               {lang==="EN"?"suspendisse in est ante in.":"əlaqələr qururlar."}</p>
               </div>
             </div>
           </SwiperSlide>
@@ -108,11 +108,10 @@ const Positive = () => {
               </div>
               </div>
               <div className="card-body">
-                <p className="card-text">Viverra justo nec ultricse<br></br>
-                dui sapien eget. Hendrerit<br></br>
-                gravida rutrum quisque non<br></br>
-                tellus orci ac. Vel fringilla<br></br>
-                est ullamcorper</p>
+                <p className="card-text"><span>{lang==="EN"?"Viverra justo nec ultricse":"Peşəkar işçilərimiz, müştərilərdən gələn"}</span><br></br>
+                <span>{lang==="EN"?"dui sapien eget. Hendrerit":"rəyləri diqqətlə dinləyərək, xidmətlərimizi"}</span><br></br>
+                <span>{lang==="EN"?"gravida rutrum quisque non":"davamlı olaraq təkmilləşdirir "}</span><br></br>
+                {lang==="EN"?"tellus orci ac. Vel fringilla":"və inkişaf etdirirlər."}</p>
               </div>
             </div>
           </SwiperSlide>
@@ -130,11 +129,10 @@ const Positive = () => {
               </div>
               </div>
               <div className="card-body">
-                <p className="card-text">Ultrices eros in cursus<br></br>
-                turpis.Aliquet enim tortor at<br></br>
-                auctor urna.Non blandit<br></br>
-                massa enim nec dui nunc<br></br>
-                mattis Est pellentesque.
+                <p className="card-text"><span>{lang==="EN"?"Ultrices eros in cursus":"Komandamızın hər bir üzvü,"}</span><br></br>
+                <span>{lang==="EN"?"turpis.Aliquet enim tortor at":"müştərilərlə əlaqəni gücləndirmək"}</span><br></br>
+                <span>{lang==="EN"?"auctor urna.Non blandit":"üçün öz sahəsində yüksək bilik "}</span><br></br>
+                {lang==="EN"?"massa enim nec dui nunc":"və təcrübəyə sahibdir."}
                 </p>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import CheckoutName from '../components/CheckoutName';
@@ -7,6 +7,7 @@ import HomeCard from '../components/HomeCard';
 import supabase from '../config/connect';
 import AOS from 'aos';
 import swal from 'sweetalert';
+import { LangContext } from '../context/LangContext';
 
 const Checkout = () => {
   const location = useLocation();
@@ -39,6 +40,8 @@ const Checkout = () => {
     });
   }, []);
 
+  const [lang,setLang] = useContext(LangContext)
+
   return (
    <>
     <CheckoutName/>
@@ -50,23 +53,23 @@ const Checkout = () => {
 <form onSubmit={handleSubmit}  className="col-6 checkout-form ">
  
   <div className="mb-3">
-    <label htmlFor="exampleInputPassword1" className="form-label">Card Number</label>
+    <label htmlFor="exampleInputPassword1" className="form-label">{lang==="EN"?"Card Number":"Kart Nömrəsi"}</label>
     <input type="text" className="form-control" name="cardNumber" value={cardDetails.cardNumber} onChange={handleChange} required />
   </div>
   <div className="mb-3">
-    <label htmlFor="exampleInputPassword1" className="form-label">Expiration Date</label>
+    <label htmlFor="exampleInputPassword1" className="form-label">{lang==="EN"?"Expiration Date":"Bitmə Tarixi"}</label>
     <input type="text" className="form-control"  name="expiryDate" value={cardDetails.expiryDate} onChange={handleChange} required  />
   </div>
   <div className="mb-3">
     <label htmlFor="exampleInputPassword1" className="form-label">CVV</label>
     <input type="text" className="form-control" name="cvv" value={cardDetails.cvv} onChange={handleChange} required  />
   </div>
-  <button type="submit" className="complete-btn">Complete Order</button>
+  <button type="submit" className="complete-btn">{lang==="EN"?"Complete Order":"Sifarişi Tamamla"}</button>
 </form>
 
 
 
-<h3 className='total-price ' style={{textAlign:"center"}}>Total Price: ${totalPrice.toFixed(2)}</h3>
+<h3 className='total-price ' style={{textAlign:"center"}}>{lang==="EN"?"Total Price: ":"Ümumi Qiymət: "}{totalPrice.toFixed(2)}</h3>
 
 
       
@@ -74,7 +77,7 @@ const Checkout = () => {
       <div data-aos="fade-down">
       {recommendedProducts.length > 0 && (
         <div className='row'>
-          <h3 className='recommended-products' >Recommended Products</h3>
+          <h3 className='recommended-products' >{lang==="EN"?"Recommended Products":"Tövsiyə olunan Məhsullar"}</h3>
           {home.map((item)=>(
          <HomeCard title={item.title} photo={item.photo} price={item.price} key={item.id}/>
        ))}

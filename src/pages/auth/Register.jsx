@@ -1,9 +1,10 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import swal from 'sweetalert';
 import RegisterName from '../../components/RegisterName';
 import Animation from '../../components/Animation';
 import supabase from "../../config/connect";
+import { LangContext } from '../../context/LangContext';
 
 const Register = () => {
 
@@ -66,6 +67,8 @@ if (
    
   
   }
+
+  const [lang,setLang] = useContext(LangContext)
   return (
 
   <>
@@ -74,44 +77,44 @@ if (
 <div className="container center-container">
 
 <form  className="center-form mt-5 mb-5" onSubmit={registerSubmited}>
-<h1 className='register-text'>Register Form</h1>
+<h1 className='register-text'>{lang==="EN"?"Register Form":"Qeydiyyat Forması"}</h1>
 <div className="mb-3">
-    <label  className="form-label">Fullname</label>
+    <label  className="form-label">{lang==="EN"?"Fullname":"Tam ad"}</label>
     <input ref={fullname} type="text" className="form-control"  />
   </div>
 
   <div className="mb-3">
-    <label  className="form-label">Date of birth</label>
+    <label  className="form-label">{lang==="EN"?"Date of birth":"Doğum günü"}</label>
     <input ref={birthday} type="date" className="form-control"  />
   </div>
 
   <div className="mb-3">
-    <label  className="form-label">Telephone</label>
+    <label  className="form-label">{lang==="EN"?"Telephone":"Telefon"}</label>
     <input ref={telephone} type="tel" className="form-control"  />
   </div>
 
   <div className="mb-3">
-    <label  className="form-label">Email address</label>
+    <label  className="form-label">{lang==="EN"?"Email address":"Email adresi"}</label>
     <input ref={email} type="email" className="form-control"  />
   </div>
 
 
   <div className="mb-3">
-    <label  className="form-label">Password</label>
+    <label  className="form-label">{lang==="EN"?"Password":"Şifrə"}</label>
     <input ref={password} type="password" className="form-control" />
   </div>
 
 
   <div className="mb-3">
-    <label  className="form-label">Confirm Password</label>
+    <label  className="form-label">{lang==="EN"?"Confirm Password":"Şifrəni Təsdiqləyin"}</label>
     <input ref={confirepassword} type="password" className="form-control" />
   </div>
   
-  <button type="submit" className="btn btn-primary button-register">REGISTER</button>
+  <button type="submit" className="btn btn-primary button-register">{lang==="EN"?"REGISTER":"QEYDİYYAT"}</button>
 
   <div className="login-div">
-    <p className='mt-3'>Already have an account.?</p>
-  <Link to='/login' ><button className='login-button'>Login</button></Link>
+    <p className='mt-3'>{lang==="EN"?"Already have an account?":"Artıq bir hesabınız var mı?"}</p>
+  <Link to='/login' ><button className='login-button'>{lang==="EN"?"Login":"Daxil ol"}</button></Link>
   </div>
 </form>
 

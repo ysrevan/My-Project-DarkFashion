@@ -48,16 +48,7 @@ const Header = () => {
 
         <div className="icons">
 
-{/* 
-      <li className="nav-item dropdown">
-  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-     
-  </a>
-  <ul className="dropdown-menu">
-    <li><a className="dropdown-item" href="#">AZ</a></li>
-    <li><a className="dropdown-item" href="#">EN</a></li>
-  </ul>
-</li> */}
+
 
      <button className='language-btn' onClick={()=>{
     lang==="EN"?setLang("AZ"):setLang("EN");
@@ -149,14 +140,6 @@ const Header = () => {
               </> : <NavLink to="/register"> <FaRegUser className='icon' /></NavLink>}
 
 
-
-
-          {/* <NavLink to={`${!cookie['cookie-fashion'] ? "/login" : "/cart"}`} className="position-relative">
-            <FiShoppingCart className='icon' />
-            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              0
-            </span>
-          </NavLink> */}
 
 <NavLink to={`${!cookie['cookie-fashion'] ? "/login" : "/cart"}`} className="position-relative">
         <FiShoppingCart className='icon' />

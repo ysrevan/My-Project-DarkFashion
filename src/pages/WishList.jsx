@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import WishlistName from '../components/WishlistName'
 import supabase from '../config/connect'
 import Animation from '../components/Animation'
+import { LangContext } from '../context/LangContext'
 const WishList = () => {
   const [wishlist, setWishlist] = useState([])
   const [cookie] = useCookies()
@@ -34,6 +35,8 @@ const WishList = () => {
     });
     updateWishlist(handleData)
   }
+
+  const [lang,setLang] = useContext(LangContext)
   return (
     <>
     <WishlistName/>
@@ -43,10 +46,10 @@ const WishList = () => {
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Photo</th>
-            <th scope="col">Title | Category</th>
-            <th scope="col">Price</th>
-            <th scope="col">Delete</th>
+            <th scope="col">{lang==="EN"?"Photo":"Şəkil"}</th>
+            <th scope="col">{lang==="EN"?"Title | Category":"Başlıq | Kateqoriya"}</th>
+            <th scope="col">{lang==="EN"?"Price":"Qiymət"}</th>
+            <th scope="col">{lang==="EN"?"Delete":"Sil"}</th>
           </tr>
         </thead>
         <tbody>

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import CartName from '../components/CartName'
 import supabase from '../config/connect'
 import Animation from '../components/Animation'
 import { Link } from 'react-router-dom'
+import { LangContext } from '../context/LangContext'
 const Cart = () => {
   const [basket, setBasket] = useState([])
   const [cookie] = useCookies()
@@ -65,6 +66,8 @@ const Cart = () => {
     }, 0);
   }
 
+  const [lang,setLang] = useContext(LangContext)
+
   return (
   <>
     <CartName/>
@@ -74,11 +77,11 @@ const Cart = () => {
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Photo</th>
-            <th scope="col">Title | Category</th>
-            <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Delete</th>
+            <th scope="col">{lang==="EN"?"Photo":"Şəkil"}</th>
+            <th scope="col">{lang==="EN"?"Title | Category":"Başlıq | Kateqoriya"}</th>
+            <th scope="col">{lang==="EN"?"Price":"Qiymət"}</th>
+            <th scope="col">{lang==="EN"?"Quantity":"Kəmiyyət"}</th>
+            <th scope="col">{lang==="EN"?"Delete":"Sil"}</th>
           </tr>
         </thead>
         <tbody>
@@ -106,7 +109,7 @@ const Cart = () => {
       </table>
       {findbasket && (
         <div className='mt-3'>
-          <h3 className='total-price mt-4' style={{textAlign:"center"}}>Total Price: ${calculateTotalPrice().toFixed(2)}</h3>
+          <h3 className='total-price mt-4' style={{textAlign:"center"}}>{lang==="EN"?"Total Price: ":"Ümumi Qiymət: "}${calculateTotalPrice().toFixed(2)}</h3>
         </div>
       )}
       
@@ -114,7 +117,7 @@ const Cart = () => {
     </div>
    
    <div className="checkout">
-   <Link to="/checkout" state={{ totalPrice: calculateTotalPrice() }}><button className='checkout-btn' style={{textAlign:"center"}} >Checkout</button></Link>
+   <Link to="/checkout" state={{ totalPrice: calculateTotalPrice() }}><button className='checkout-btn' style={{textAlign:"center"}} >{lang==="EN"?"Checkout":"Yoxla"}</button></Link>
    </div>
    </div>
     <Animation/>
