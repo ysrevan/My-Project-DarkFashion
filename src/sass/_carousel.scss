@@ -48,3 +48,29 @@
 
 
 
+  @media (max-width: 576px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+        transform: translateX(0);
+    }
+
+    .custom-icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .carousel-item.active .col-6 {
+        width: 100%;
+        animation-duration: 0.8s;
+    }
+    
+    .carousel-item.active .col-6:nth-child(1) {
+        animation: slideDown 0.8s forwards;
+    }
+
+    .carousel-item.active .col-6:nth-child(2) {
+        animation: slideUp 0.8s forwards;
+    }
+}

@@ -71,3 +71,9 @@
         background: none;
     }
 }
+
+@media (max-width:576px){
+  .button-register{
+    padding: 10px 170px 10px 180px;
+}
+}

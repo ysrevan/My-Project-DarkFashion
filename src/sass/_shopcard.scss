@@ -49,3 +49,9 @@
     }
     
 }
+
+@media (max-width:576px){
+    .wishlist-button{
+        transform: translateX(150px) !important;
+    }
+}

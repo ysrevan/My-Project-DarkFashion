@@ -61,5 +61,11 @@
    color: #A1876A;
 }
 
-
-
+@media (max-width: 576px) {
+    .positive-text{
+        text-align: center;
+    }
+    .swiper{
+        display: none;
+    }
+}

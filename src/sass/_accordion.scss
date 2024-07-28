@@ -101,3 +101,57 @@ input[type="radio"] {
     }
   }
 }
+
+
+
+@media (max-width: 576px) {
+  .accordion-box {
+    height: auto; 
+    background-color: #000;
+
+    .accordion-box1, .accordion-box2 {
+      flex-direction: column; 
+      align-items: center; 
+    }
+    
+    .accordion-box1{
+      img{
+        width: 80%;
+        height: 500px;
+      }
+    }
+
+    img {
+      width: 80%; 
+      height: auto;
+      margin: 20px 0; 
+    }
+
+    .accordion1, .accordion {
+      max-width: 90%; 
+      margin-top: 50px; 
+    }
+  }
+
+  article {
+    padding: 0.5em; 
+    margin: 0.5em auto; 
+  }
+
+  h4 {
+    font-size: 1.2em; 
+  }
+
+  input[type="radio"] {
+    &~div {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s;
+      color: #fff;
+    }
+
+    &:checked~div {
+      max-height: 150px; 
+    }
+  }
+}
