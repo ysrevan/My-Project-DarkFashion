@@ -59,3 +59,19 @@
         }
     }
 }
+
+@media (max-width:576px){
+    .contactcards{
+        height: 2200px;
+        .city-img{
+            .card{
+                margin: 10px;
+            }
+        }
+        .address-card{
+            .card{
+                margin: 10px;
+            }
+        }
+    }
+}

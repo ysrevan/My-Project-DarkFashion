@@ -1,3 +1,18 @@
 .account-box{
     background-color: #000;
+    height: 280px;
+    h1{
+        text-align: center;
+        color: #fff;
+        transform: translateY(20px);
+    }
+    ul{
+        transform: translateY(20px);
+        text-align: center;
+        .account-list{
+           list-style: none;
+           color: #fff;
+           font-size: 30px;
+        }
+    }
 }

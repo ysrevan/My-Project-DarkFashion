@@ -11,7 +11,7 @@ const Service = () => {
         <div className="container">
             <div className="row">
                 <div className="col-12 col-sm-6 col-md-3">
-  <div className="card mb-3">
+  <div className="card mb-3 mt-5">
   <div className="row g-0">
     <div className="col-md-4">
     <CiDeliveryTruck className='truck'/>
@@ -29,7 +29,7 @@ const Service = () => {
 
 
                 <div className="col-12 col-sm-6 col-md-3">
-  <div className="card mb-3">
+  <div className="card mb-3 mt-5">
   <div className="row g-0">
     <div className="col-md-4">
     <BsTelephone className='telephone'/>
@@ -48,7 +48,7 @@ const Service = () => {
 
 
                 <div className="col-12 col-sm-6 col-md-3">
-  <div className="card mb-3">
+  <div className="card mb-3 mt-5">
   <div className="row g-0">
     <div className="col-md-4">
     <BsBox  className='box'/>
@@ -66,7 +66,7 @@ const Service = () => {
 
 
                 <div className="col-12 col-sm-6 col-md-3">
-  <div className="card mb-3">
+  <div className="card mb-3 mt-5">
   <div className="row g-0">
     <div className="col-md-4">
     <IoCartOutline className="cart"/>
