@@ -12,6 +12,7 @@ import { useAppSelector } from '../tools/store';
 import slugify from 'slugify';
 import { MdDarkMode } from "react-icons/md";
 import { LangContext } from '../context/LangContext';
+import { ThemeContext } from '../context/ThemeContext';
 const Header = () => {
 
 
@@ -27,10 +28,12 @@ const Header = () => {
   };
 
   const [lang,setLang] = useContext(LangContext)
+  const [theme,setTheme] = useContext(ThemeContext);
   return (
-    <header>
+    <div className={`dark-div ${theme === "light" ? "light" : "dark"}`}>
+      <header>
       <div className="container">
-        <img src="https://darkfashion.wpengine.com/wp-content/uploads/2023/09/Light-logo.svg" alt="" />
+        <img className='header-logo' src="https://darkfashion.wpengine.com/wp-content/uploads/2023/09/Light-logo.svg" alt="" />
         <nav>
           <ul>
             <NavLink className="nav-link" to="/">{lang==="EN"?"HOME":"ANA SƏHİFƏ"}</NavLink>
@@ -54,8 +57,11 @@ const Header = () => {
     lang==="EN"?setLang("AZ"):setLang("EN");
     lang==="EN"?localStorage.setItem("lang","AZ"):localStorage.setItem("lang","EN");
     }}>{lang}</button>
-     <button className='darklight-btn'><MdDarkMode/></button>
-
+     <button className='darklight-btn' onClick={()=>{
+      theme==="dark"?setTheme("light"):setTheme("dark")
+      theme==="dark"?localStorage.setItem("theme","light"):localStorage.setItem("theme","dark")
+     }}>{theme}</button>
+    
 
 
 
@@ -119,7 +125,7 @@ const Header = () => {
 
 
 
-          {cookie['admintoken'] ? <MdLogin className='icon' onClick={() => {
+          {cookie['admintoken'] ? <MdLogin className="icon" onClick={() => {
             removeCookie('admintoken');
             swal('Logout is successfull!', '', 'success')
             setTimeout(() => {
@@ -158,6 +164,7 @@ const Header = () => {
 
       </div>
     </header>
+    </div>
   )
 }
 

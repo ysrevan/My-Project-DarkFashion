@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import swal from 'sweetalert';
 import { LangContext } from '../../../context/LangContext';
+import { ThemeContext } from '../../../context/ThemeContext';
 import { editcategory } from '../../../tools/slices/categorySlice';
 import { useAppDispatch, useAppSelector } from '../../../tools/store'
 
@@ -20,8 +21,10 @@ const Update = () => {
    }
   }
   const [lang,setLang] = useContext(LangContext)
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
- <div className="categoryedit-box">
+     <div className={`dark-div ${theme === "light"?"light":"dark"}`}>
+      <div className="categoryedit-box">
      <div className='container'>
        <h1 className='categoryedit-title' style={{textAlign:"center"}}>{lang==="EN"?"Edit Category":"Kateqoriyanı Yenilə"}</h1>
         <div className="d-flex align-items-center justify-content-center">
@@ -41,6 +44,7 @@ const Update = () => {
     </div>
  </div>
 
+     </div>
   )
 }
 

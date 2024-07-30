@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { deletenews1 } from '../../../tools/slices/news1Slice';
 import { useContext } from 'react';
 import { LangContext } from '../../../context/LangContext';
+import { ThemeContext } from '../../../context/ThemeContext';
 const Read = () => {
 
   const dispatch = useDispatch(); 
@@ -17,13 +18,14 @@ const Read = () => {
   };
 
   const [lang,setLang] = useContext(LangContext)
-
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
     <>
     <NewsReadName/>
       
 
-      <div className="newsread-box">
+     <div className={`dark-div ${theme === "light"?"light":"dark"}`}>
+     <div className="newsread-box">
       <div className='container'>
     <Link to="/dashboard/news1/Create"><button className='productscategory mt-3 mb-3'>{lang==="EN"?"Create News":"Xəbər Yarat"}</button></Link>
 
@@ -62,6 +64,7 @@ const Read = () => {
     </div>
 
       </div>
+     </div>
 
     <Animation/>
     </>

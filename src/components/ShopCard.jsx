@@ -5,11 +5,14 @@ import { Link } from 'react-router-dom';
 import slugify from 'slugify';
 import supabase from '../config/connect';
 import { LangContext } from '../context/LangContext';
+import { ThemeContext } from '../context/ThemeContext';
 const ShopCard = ({img, title, category, price, alldata }) => {
 const [cookie] = useCookies(); 
 const [lang,setLang] = useContext(LangContext)
+const [theme,setTheme] = useContext(ThemeContext)
   return (
     <div className="col-12 col-sm-6 col-md-3 mt-5 mb-5">
+   <div className={`dark-div${theme === "light"?"light":"dark"}`}>
       <div className="card">
         <img src={img} className="card-img-top" alt="..." />
         <div className="card-body text-center d-flex flex-column justify-content-center">
@@ -89,6 +92,7 @@ const [lang,setLang] = useContext(LangContext)
         </div>
       </div>
     </div>
+   </div>
   );
 }
 

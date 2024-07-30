@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import BlogName from '../components/BlogName';
 import Animation from '../components/Animation';
 import Pagination from '@mui/material/Pagination';
@@ -7,6 +7,7 @@ import NewsCard1 from '../components/NewsCard1';
 import NewsCard2 from '../components/NewsCard2';
 import { useAppSelector } from '../tools/store';
 import AOS from 'aos';
+import { ThemeContext } from '../context/ThemeContext';
 const News = () => {
   const [page, setPage] = useState(1);
   const news1 = useAppSelector((state) => state.news1) ;
@@ -41,10 +42,13 @@ const News = () => {
       duration: 1000, 
     });
   }, []);
+
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
     <>
       <BlogName />
-      <div className="newscards p-5">
+        <div className={`dark-div ${theme === "light"?"light":"dark"}`}>
+        <div className="newscards p-5">
         <div className="container">
          {renderContent()}
           <Stack spacing={2}>
@@ -59,6 +63,7 @@ const News = () => {
           </Stack>
         </div>
       </div>
+        </div>
       <Animation />
     </>
   );

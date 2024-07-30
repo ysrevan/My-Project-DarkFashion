@@ -3,6 +3,7 @@ import swal from 'sweetalert';
 import { addfashion } from '../../../tools/slices/fashionSlice';
 import { useAppDispatch } from '../../../tools/store'
 import { LangContext } from '../../../context/LangContext'
+import { ThemeContext } from '../../../context/ThemeContext';
 const Create = () => {
   const titleRef = useRef(null)
   const photoRef = useRef(null)
@@ -22,8 +23,10 @@ const Create = () => {
    }
   }
   const [lang,setLang] = useContext(LangContext)
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
-   <div className="productscreat-box">
+     <div className={`dark-div ${theme === "light"?"light":"dark"}`}>
+      <div className="productscreat-box">
      <div className='container'>
        <h1 className='productscreat-title' style={{textAlign:"center"}}>{lang==="EN"?"Create Products":"Məhsul Yaradın"}</h1>
         <div className="d-flex align-items-center justify-content-center">
@@ -55,6 +58,7 @@ const Create = () => {
         </div>
     </div>
    </div>
+     </div>
   )
 }
 

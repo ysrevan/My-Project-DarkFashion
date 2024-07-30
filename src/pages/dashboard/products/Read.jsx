@@ -6,6 +6,7 @@ import { useAppSelector } from '../../../tools/store';
 import Animation from '../../../components/Animation'
 import ProductsReadName from '../../../components/ProductsReadName';
 import { LangContext } from '../../../context/LangContext';
+import { ThemeContext } from '../../../context/ThemeContext';
 const Read = () => {
   const dispatch = useDispatch(); 
   const fashion = useAppSelector((state) => state.fashion); 
@@ -14,10 +15,12 @@ const Read = () => {
     dispatch(deletefashion({ id }));
   };
   const [lang,setLang] = useContext(LangContext)
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
 <>
 <ProductsReadName/>
-<div className="productsread-box">
+    <div className={`dark-div ${theme === "light"?"light":"dark"}`}>
+    <div className="productsread-box">
      <div className='container'>
       
       <Link to="/dashboard/products/Create"><button className='productscategory mt-3 mb-3'>{lang==="EN"?"Create Products":"Məhsul Yaradın"}</button></Link>
@@ -55,6 +58,7 @@ const Read = () => {
       </table>
     </div>
    </div>
+    </div>
    <Animation/>
 </>
   );

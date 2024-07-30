@@ -155,3 +155,24 @@ input[type="radio"] {
     }
   }
 }
+
+
+.light .accordion-box{
+  background-color: #fff;
+  .accordion-text{
+    h5{
+      color: #000;
+    }
+    h1{
+      color: #000;
+    }
+  }
+  
+    h4{
+      color: #000 !important;
+    }
+.accordion-title{
+  color: #000;
+}
+  
+}

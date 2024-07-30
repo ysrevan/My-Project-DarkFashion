@@ -5,6 +5,7 @@ import supabase from "../../config/connect";
 import { FaFacebookF } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { LangContext } from '../../context/LangContext';
+import { ThemeContext } from '../../context/ThemeContext';
 const adminuser = {
   email:'dark@fashion.com',
   password:'darkfashion123',
@@ -52,7 +53,9 @@ checkLogin();
 
 
   const [lang,setLang] = useContext(LangContext)
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
+<div className={`dark-div ${theme === "light"?"light":"dark"}`}>
 <div className="form-background">
 <div className="container center-form-container">
       <form className='center-login-form' onSubmit={loginSubmited}>
@@ -75,6 +78,7 @@ checkLogin();
         </div>
       </form>
     </div>
+</div>
 </div>
   );
 };

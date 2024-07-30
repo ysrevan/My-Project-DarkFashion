@@ -4,6 +4,7 @@ import WishlistName from '../components/WishlistName'
 import supabase from '../config/connect'
 import Animation from '../components/Animation'
 import { LangContext } from '../context/LangContext'
+import { ThemeContext } from '../context/ThemeContext'
 const WishList = () => {
   const [wishlist, setWishlist] = useState([])
   const [cookie] = useCookies()
@@ -37,9 +38,11 @@ const WishList = () => {
   }
 
   const [lang,setLang] = useContext(LangContext)
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
     <>
     <WishlistName/>
+   <div className={`dark-div ${theme === "light"?"light":"dark"}`}>
    <div className="wishlist-box">
    <div className='container '>
       <table className="table wishlist-table">
@@ -72,6 +75,7 @@ const WishList = () => {
       </table>
      
     </div>
+   </div>
    </div>
     <Animation/>
   </>

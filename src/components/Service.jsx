@@ -4,10 +4,13 @@ import { BsTelephone } from "react-icons/bs";
 import { BsBox } from "react-icons/bs";
 import { IoCartOutline } from "react-icons/io5";
 import { LangContext } from '../context/LangContext';
+import { ThemeContext } from '../context/ThemeContext';
 const Service = () => {
   const [lang,setLang] = useContext(LangContext)
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
-    <div className='service'>
+   <div className={`dark-div ${theme === "light"?"light":"dark"}`}>
+     <div className="service">
         <div className="container">
             <div className="row">
                 <div className="col-12 col-sm-6 col-md-3">
@@ -84,6 +87,7 @@ const Service = () => {
             </div>
         </div>
     </div>
+   </div>
   )
 }
 

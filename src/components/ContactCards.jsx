@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { MdWatchLater } from "react-icons/md";
+import { ThemeContext } from '../context/ThemeContext';
 const ContactCards = () => {
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
-    <div className='contactcards'>
+    <div className={`dark-div ${theme === "light" ? "light" : "dark"}`}>
+      <div className='contactcards'>
       <div className="container">
         <div className="city-img">
         <div className="row">
@@ -136,6 +139,7 @@ const ContactCards = () => {
 
 
       </div>
+    </div>
     </div>
   )
 }

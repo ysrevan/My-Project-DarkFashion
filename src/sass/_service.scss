@@ -92,3 +92,13 @@
         font-size: 60px; 
     }
 }
+
+.light .service{
+    background-color: #fff !important;
+    .card-title{
+        color: #000 !important;
+    }
+    .card-text{
+        color: #000 !important;
+    }
+}

@@ -5,6 +5,7 @@ import supabase from '../config/connect'
 import Animation from '../components/Animation'
 import { Link } from 'react-router-dom'
 import { LangContext } from '../context/LangContext'
+import { ThemeContext } from '../context/ThemeContext'
 const Cart = () => {
   const [basket, setBasket] = useState([])
   const [cookie] = useCookies()
@@ -67,11 +68,12 @@ const Cart = () => {
   }
 
   const [lang,setLang] = useContext(LangContext)
-
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
   <>
     <CartName/>
-   <div className="cart-box">
+    <div className={`dark-div ${theme === "light"?"light":"dark"}`}>
+    <div className="cart-box">
    <div className='container '>
       <table className="table cart-table">
         <thead>
@@ -120,6 +122,7 @@ const Cart = () => {
    <Link to="/checkout" state={{ totalPrice: calculateTotalPrice() }}><button className='checkout-btn' style={{textAlign:"center"}} >{lang==="EN"?"Checkout":"Yoxla"}</button></Link>
    </div>
    </div>
+    </div>
     <Animation/>
   </>
   )

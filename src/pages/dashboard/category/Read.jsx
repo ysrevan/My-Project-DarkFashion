@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Animation from '../../../components/Animation'
 import CategoryReadName from '../../../components/CategoryReadName'
 import { LangContext } from '../../../context/LangContext'
+import { ThemeContext } from '../../../context/ThemeContext'
 import { deletecategory } from '../../../tools/slices/categorySlice'
 import { useAppSelector } from '../../../tools/store'
 
@@ -15,9 +16,11 @@ const Read = () => {
     distpach(deletecategory({ id })); 
   };
   const [lang,setLang] = useContext(LangContext)
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
  <>
     <CategoryReadName/>
+    <div className={`dark-div ${theme === "light"?"light":"dark"}`}>
     <div className="categoryread-box">
     <div className='container'>
 <Link  to="/dashboard/category/Create"><button className='createcategory mt-3 mb-3'>{lang==="EN"?"Create Category":"Kateqoriya Yaradın"}</button></Link>
@@ -48,6 +51,7 @@ const Read = () => {
   </tbody>
 </table>
 
+    </div>
     </div>
     </div>
     <Animation/>

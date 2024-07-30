@@ -8,6 +8,7 @@ import supabase from '../config/connect';
 import AOS from 'aos';
 import swal from 'sweetalert';
 import { LangContext } from '../context/LangContext';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Checkout = () => {
   const location = useLocation();
@@ -41,11 +42,12 @@ const Checkout = () => {
   }, []);
 
   const [lang,setLang] = useContext(LangContext)
-
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
    <>
     <CheckoutName/>
-    <div className='checkout-page'>
+       <div className={`dark-div ${theme === "light"?"light":"dark"}`}>
+       <div className='checkout-page'>
       <div className="container">
      
 
@@ -69,7 +71,7 @@ const Checkout = () => {
 
 
 
-<h3 className='total-price ' style={{textAlign:"center"}}>{lang==="EN"?"Total Price: ":"Ümumi Qiymət: "}{totalPrice.toFixed(2)}</h3>
+<h3 className='total-price ' style={{textAlign:"center"}}>{lang==="EN"?"Total Price: ":"Ümumi Qiymət: "}$ {totalPrice.toFixed(2)}</h3>
 
 
       
@@ -87,6 +89,7 @@ const Checkout = () => {
       </div>
       
     </div>
+       </div>
     <Animation/>
    </>
   );

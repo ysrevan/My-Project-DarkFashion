@@ -8,6 +8,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import AOS from 'aos';
 import { FaStar } from 'react-icons/fa6';
 import { LangContext } from '../context/LangContext';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Positive = () => {
   useEffect(() => {
@@ -17,8 +18,10 @@ const Positive = () => {
   }, []);
   
   const [lang,setLang] = useContext(LangContext)
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
-    <div className='positive'>
+    <div className={`dark-div ${theme === "light" ? "light" : ""}`}>
+      <div className='positive'>
       <div className="container">
       <div data-aos="fade-up">
       <div className="positive-text">
@@ -141,6 +144,7 @@ const Positive = () => {
   
       </div>
     </div>
+  </div>
   );
 }
 

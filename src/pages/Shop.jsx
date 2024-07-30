@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ShopCard from '../components/ShopCard';
 import ShopName from '../components/ShopName';
 import Animation from '../components/Animation'
 import { useAppSelector } from '../tools/store';
 import { useCookies } from 'react-cookie';
 import AOS from 'aos';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Shop = () => {
   const [filterdata,setFilterData] = useState([])
@@ -27,46 +28,50 @@ useEffect(() => {
     duration: 1000, 
   });
 }, []);
+
+const [theme,setTheme] =useContext(ThemeContext)
   return (
    <>
  <ShopName/>
-  <div className="shopcard">
+  <div className={`dark-div ${theme === "light" ? "light" : "dark"}`}>
+  <div className = "shopcard">
 
-  <div className='container'>
-
-
-
-  <div data-aos="fade-down">
-      <div className="row">
-        <div className="filter-button mt-5">
-
-        {category.map((item) => (
-          <button className='filter' key={item.id} onClick={()=>{filterProduct(item.title)}}>{item.title}</button>
-        ))}
+<div className='container'>
 
 
-        </div>
-       
-        
-        {
-  filterdata.length === 0 ? (
-    fashion.map((item) => (
-      <ShopCard alldata={item} img={item.photo} title={item.title} price={item.price} category={item.category} key={item.id} />
-    ))
-  ) : (
-    filterdata.map((item) => (
-      <ShopCard alldata={item}  img={item.photo} title={item.title} price={item.price} category={item.category} key={item.id} />
-    ))
-  )
+
+<div data-aos="fade-down">
+    <div className="row">
+      <div className="filter-button mt-5">
+
+      {category.map((item) => (
+        <button className='filter' key={item.id} onClick={()=>{filterProduct(item.title)}}>{item.title}</button>
+      ))}
+
+
+      </div>
+     
+      
+      {
+filterdata.length === 0 ? (
+  fashion.map((item) => (
+    <ShopCard alldata={item} img={item.photo} title={item.title} price={item.price} category={item.category} key={item.id} />
+  ))
+) : (
+  filterdata.map((item) => (
+    <ShopCard alldata={item}  img={item.photo} title={item.title} price={item.price} category={item.category} key={item.id} />
+  ))
+)
 }
 
-      
-      </div>
+    
     </div>
-     
-    </div>
+  </div>
+   
+  </div>
 
- 
+
+</div>
   </div>
 
     <Animation/>

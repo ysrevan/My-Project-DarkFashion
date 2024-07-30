@@ -19,3 +19,14 @@
 }
 
 
+.light .newscards{
+    background-color: #fff !important;
+    .news1card{
+        .card-title{
+            color: #000 !important;
+        }
+        .card-text{
+            color: #000 !important;
+        }
+    }
+}

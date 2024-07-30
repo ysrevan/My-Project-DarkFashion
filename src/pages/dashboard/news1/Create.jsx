@@ -3,6 +3,7 @@ import swal from 'sweetalert';
 import { addnews1 } from '../../../tools/slices/news1Slice';
 import { useAppDispatch } from '../../../tools/store'
 import { LangContext } from '../../../context/LangContext'
+import { ThemeContext } from '../../../context/ThemeContext';
 const Create = () => {
   const titleRef = useRef(null)
   const imageRef = useRef(null)
@@ -20,8 +21,10 @@ const Create = () => {
    }
   }
   const [lang,setLang] = useContext(LangContext)
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
-       <div className="newscreate-box">
+       <div className={`dark-div ${theme === "light"?"light":"dark"}`}>
+        <div className="newscreate-box">
             <div className='container'>
        <h1 className='newscreate-title' style={{textAlign:"center"}}>{lang==="EN"?"Create News":"Xəbər Yaradın"}</h1>
         <div className="d-flex align-items-center justify-content-center">
@@ -49,6 +52,7 @@ const Create = () => {
 
         </div>
     </div>
+       </div>
        </div>
   )
 }

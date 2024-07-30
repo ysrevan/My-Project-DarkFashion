@@ -5,7 +5,7 @@ import RegisterName from '../../components/RegisterName';
 import Animation from '../../components/Animation';
 import supabase from "../../config/connect";
 import { LangContext } from '../../context/LangContext';
-
+import { ThemeContext } from '../../context/ThemeContext';
 const Register = () => {
 
   const fullname = useRef(null)
@@ -69,11 +69,14 @@ if (
   }
 
   const [lang,setLang] = useContext(LangContext)
+  const [theme,setTheme] = useContext(ThemeContext)
   return (
 
   <>
   <RegisterName/>
-<div className="form-background">
+ 
+ <div className={`dark-div ${theme === "light"?"light":"dark"}`}>
+ <div className="form-background">
 <div className="container center-container">
 
 <form  className="center-form mt-5 mb-5" onSubmit={registerSubmited}>
@@ -124,6 +127,7 @@ if (
 
    
 </div>
+ </div>
 
 
    
