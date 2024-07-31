@@ -1,17 +1,25 @@
-.wishlist-box{
+.wishlist-box {
     background-color: #000;
-    .wishlist-table{
-        transform: translateY(30px);
-    }
-    .delete-btn{
-        background-color: #A1876A;
-        color: #fff;
-        border: 1px solid #A1876A;
-        padding: 10px 15px 10px 15px;
-        border-radius: 50px;
-        transition: .5s;
-    }
-}
+    overflow-y: hidden; 
+  }
+  
+  .wishlist-table {
+    transform: translateY(30px);
+    
+  }
+  
+  .delete-btn {
+    background-color: #a1876a;
+    color: #fff;
+    border: 1px solid #a1876a;
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: 0.5s;
+  }
+  
+  .light .wishlist-box {
+    background-color: #fff;
+  }
 
 .light .wishlist-box{
     background-color: #fff;
