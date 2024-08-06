@@ -29,28 +29,16 @@ const Footer = () => {
 
 
                 <div className="footer-text">
-                    <div className="col mb-3">
-                        <h5>{lang==="EN"?"ORDER ASSISTANCE":"SİFARİŞ YARDIMI"}</h5>
-                        <ul className="nav flex-column">
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Book An Appoinment":"Görüş Sifariş Edin"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Shipping & Delivery":"Çatdırılma və Quraşdırılma"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Returns & Refunds":"Qaytarmalar və Geri Ödənişlər"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Gift Wrapping":"Hədiyyənin Qablaşdırılması"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Follow Your Order":"Sifarişinizə Əməl Edin"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Stores":"Mağazalar"}</a></Link>
-                        </ul>
-                    </div>
+                   
 
                     <div className="col mb-3">
-                        <h5>{lang==="EN"?"COMPANY":"ŞİRKƏT"}</h5>
+                        <h5>{lang === "EN" ? "PAGES" : "SƏHİFƏLƏR"}</h5>
                         <ul className="nav flex-column">
-                            <Link to="/about" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"About Us":"Haqqımızda"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Awards":"Mükafatlar"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Our Mission":"Bizim Missiyamız"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Privacy Policy":"Gizlilik Siyasəti"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Press Release":"Press-Reliz"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Hire Me":"Məni Işə Götür"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Affiliates And Creators":"Filiallar Və Yaradıcılar"}</a></Link>
+                        <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang === "EN" ? "Home" : "Ana Səhifə"}</a></Link>
+                        <Link to="/about" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"About Us":"Haqqımızda"}</a></Link>
+                        <Link to="/shop" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang === "EN" ? "Shop" : "Mağaza"}</a></Link>
+                        <Link to="/news" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang === "EN" ? "News" : "Xəbərlər"}</a></Link>
+                        <Link to="/contact" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang === "EN" ? "Contact" : "Əlaqə"}</a></Link>
                         </ul>
                     </div>
 
@@ -58,10 +46,10 @@ const Footer = () => {
                         <h5>{lang==="EN"?"SUPPORT":"DƏSTƏK"}</h5>
                         <ul className="nav flex-column">
                             <Link to="/faq" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">FAQ</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Shipping And Returns":"Çatdırılma Və Qaytarma"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Tracking":"İzləmə"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Size Charts":"Ölçü Cədvəlləri"}</a></Link>
-                            <Link to="/" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Gift Cards":"Hədiyyə Kartları"}</a></Link>
+                            <Link to="/cart" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Cart":"Səbət"}</a></Link>
+                            <Link to="/wishlist" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Wishlist":"İstək listi"}</a></Link>
+                            <Link to="/login" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Login":"Daxil ol"}</a></Link>
+                            <Link to="/register" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Register":"Qeydiyyatdan keçin"}</a></Link>
                         </ul>
                     </div>
 
