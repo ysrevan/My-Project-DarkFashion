@@ -39,7 +39,7 @@ const Map = () => {
         <div className="contact-text">
           <h5>{lang==="EN"?"PLEASE ELABORATE ON YOUR NEEDS":"EHTİYACLARINIZ HAQQINDA ƏTRAFLI MƏLUMAT EDİN"}</h5>
           <h1>{lang==="EN"?"Please Use This Form For Any General Queries & Concerns.":"İstənilən Ümumi Sorğu və Narahatlıq üçün Bu Formadan İstifadə Edin."}</h1>
-          <form  className='mt-5' ref={form} onSubmit={sendEmail}>
+          <form   className='contactform mt-5' ref={form} onSubmit={sendEmail}>
             <input className='contact-input' type="text" placeholder={lang==="EN"?"Your name":"Adınız"} name="user_name" /><br />
             <hr />
             <input className='contact-input' type="email" placeholder={lang==="EN"?"Your email":"Email"} name="user_email" /><br />

@@ -61,14 +61,27 @@
    color: #A1876A;
 }
 
+
+@media (max-width: 1024px) {
+    .positive-text{
+       transform: translateX(300px);
+       text-align: center;
+    }
+    .swiper{
+        display: none;
+    }
+}
+
 @media (max-width: 576px) {
     .positive-text{
+        transform: translateX(50px);
         text-align: center;
     }
     .swiper{
         display: none;
     }
 }
+
 
 
 .light .positive{

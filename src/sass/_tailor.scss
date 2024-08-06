@@ -37,6 +37,28 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .tailor {
+        height: auto;
+    }
+    .tailor .container {
+        flex-direction: column; 
+        height: auto;
+    }
+    .tailor .container .tailor-text {
+        width: 100%; 
+        padding: 20px; 
+        text-align: center; 
+    }
+    .tailor .container .card img {
+        width: 100%; 
+        height: auto; 
+    }
+    .swiper {
+        display: none; 
+    }
+}
+
 @media (max-width: 576px) {
     .tailor {
         height: auto;

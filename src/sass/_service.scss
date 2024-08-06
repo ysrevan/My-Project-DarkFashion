@@ -93,6 +93,22 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .service {
+        height: auto; 
+    }
+    .service .container .card {
+        flex: 1 1 100%; 
+        margin-bottom: 15px;
+    }
+    .service .container .card .truck,
+    .service .container .card .telephone,
+    .service .container .card .box,
+    .service .container .card .cart {
+        font-size: 60px; 
+    }
+}
+
 .light .service{
     background-color: #fff !important;
     .card-title{

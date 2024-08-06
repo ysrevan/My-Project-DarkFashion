@@ -28,10 +28,18 @@
   }
 }
 
-@media (max-width:576px){
-  .aboutname{
-    img{
-      width: 483px;
+@media (max-width: 1024px) {
+  .aboutname {
+    img {
+      width: 990px !important;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .aboutname {
+    img {
+      width: 483px !important;
     }
   }
 }

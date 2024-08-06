@@ -177,3 +177,63 @@
       }
     }
   }
+
+
+  @media (max-width: 1024px) {
+    .cool {
+      height: auto;
+  
+      .box {
+        flex-direction: column; 
+        height: auto; 
+  
+        .photo {
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+  
+        .container {
+          .cool-text {
+            flex-direction: column; 
+            align-items: flex-start;
+            height: auto;
+  
+            .text-1,
+            .text-2 {
+              width: 100%; 
+              margin-bottom: 20px; 
+            }
+  
+            button {
+              width: 100%; 
+              text-align: center; 
+            }
+          }
+  
+          .picture {
+            flex-direction: column; 
+            align-items: center;
+  
+            .row {
+              width: 100%;
+  
+              .card {
+                width: 90%; 
+                margin-bottom: 20px; 
+              }
+            }
+  
+            .two-picture {
+              .picture-1 img,
+              .picture-2 img {
+                width: 100%; 
+                height: auto; 
+              }
+            }
+          }
+        }
+      }
+    }
+  }

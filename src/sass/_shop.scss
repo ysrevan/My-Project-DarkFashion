@@ -19,6 +19,13 @@
     }
 }
 
+@media (max-width:1024px){
+    .filter-button{
+        transform: translateX(100px);
+    }
+}
+
+
 @media (max-width:576px){
     .filter-button{
         transform: translateX(50px);

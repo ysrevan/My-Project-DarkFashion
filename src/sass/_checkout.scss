@@ -68,3 +68,19 @@
         color: #000;
     }
 }
+
+@media (max-width:1024px){
+    .checkout-form{
+        transform: translate(190px,40px) !important;
+    }
+}
+
+.light .checkout-page{
+    background-color: #fff !important;
+    .total-price{
+        color: #000;
+    }
+    .form-label{
+        color: #000;
+    }
+}

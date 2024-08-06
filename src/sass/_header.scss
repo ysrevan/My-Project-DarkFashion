@@ -55,7 +55,7 @@ header{
        
          background-color: #A1876A;
           border: 2px solid #A1876A;
-          color: #fff;
+          color: #fff !important;
           .export-read{
              list-style: none;
              color: #000;
@@ -81,11 +81,39 @@ header{
         background:none;
         border: none;
         color: #fff;
-        font-size: 18px;
+        font-size: 30px;
+        transform: translateY(-3px);
      }
 }
 
 @media (max-width: 576px) {
+    header {
+        height: auto;
+        padding: 10px;
+        .container {
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+            nav {
+                margin-bottom: 20px;
+                margin-top: 20px;
+                margin-right: 35px;
+                width: 95%;
+                    .nav-link {
+                        font-size: 16px;  
+                    }
+                
+            }
+        .icons{
+            width: 60%;
+        }
+
+    }
+}
+}
+
+
+@media (max-width: 1024px) {
     header {
         height: auto;
         padding: 10px;
@@ -141,3 +169,55 @@ header{
 .light .header-logo{
     filter: invert(100%);
 }
+.light .name{
+    color: #000 !important;
+}
+
+
+.d-md-none{
+    transform: translate(200px,-10px);
+}
+
+
+
+  
+  .menu-button {
+    display: none;
+  }
+  
+  .desktop-nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .desktop-nav .nav-link {
+    margin: 0 10px;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+  
+    .menu-button {
+      display: block;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .desktop-nav {
+      display: none;
+    }
+  
+    .menu-button {
+      display: block;
+    }
+  }
+  
+.dashboard-button{
+    color: #fff;
+}
+
+
+

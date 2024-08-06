@@ -135,3 +135,67 @@
         object-fit: cover;
     }
 }
+
+
+@media (max-width: 1024px) {
+    .custom {
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+
+        img {
+            width: 100%;
+        }
+
+        .container {
+            .custom-card {
+                .card {
+                    margin-bottom: 20px;
+
+                    .card-body {
+                        .card-title {
+                            font-size: 18px;
+                        }
+                        .card-text {
+                            font-size: 14px;
+                        }
+                        .btn-primary {
+                            width: 100%;
+                            padding: 10px 0;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .custom-text {
+            transform: translateY(0);
+            text-align: center;
+            padding: 20px 0;
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            h6 {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .photo-opacity {
+        opacity: 0.8;
+    }
+
+    .card-img-top, .photo-opacity img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
