@@ -48,8 +48,6 @@ const Footer = () => {
                             <Link to="/faq" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">FAQ</a></Link>
                             <Link to="/cart" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Cart":"Səbət"}</a></Link>
                             <Link to="/wishlist" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Wishlist":"İstək listi"}</a></Link>
-                            <Link to="/login" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Login":"Daxil ol"}</a></Link>
-                            <Link to="/register" className="nav-item mb-2"><a href="#" className="nav-link p-0 text-body-secondary">{lang==="EN"?"Register":"Qeydiyyatdan keçin"}</a></Link>
                         </ul>
                     </div>
 
